@@ -1,0 +1,38 @@
+<h1>Lista de Voluntarios</h1>
+<div class="table-responsive">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Correo</th>
+      <th>Telefono</th>
+      <th>Ocupacion</th>
+      <th colspan="3">Opciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+		<div class="col-md-4">	
+		<%= link_to 'Nuevo Voluntario', new_voluntario_temporal_path, :class=>"btn btn-warning" %>
+	</div>
+</br>
+</br>
+		</br>
+    <% @voluntario_temporals.each do |voluntario_temporal| %>
+      <tr>
+        <td><%= voluntario_temporal.nombre %></td>
+        <td><%= voluntario_temporal.correo %></td>
+        <td><%= voluntario_temporal.telefono %></td>
+        <td><%= voluntario_temporal.ocupacion %></td>
+        <td><%= link_to 'Mostrar', voluntario_temporal, :class=>"btn btn-success" %></td>
+        <td><%= link_to 'Editar', edit_voluntario_temporal_path(voluntario_temporal), :class=>"btn btn-warning" %></td>
+        <td><%= link_to 'Eliminar', voluntario_temporal, method: :delete, data: { confirm: 'Esta seguro?' }, :class=>"btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+

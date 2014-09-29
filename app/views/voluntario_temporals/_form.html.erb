@@ -1,0 +1,42 @@
+<%= form_for(@voluntario_temporal) do |f| %>
+  <% if @voluntario_temporal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@voluntario_temporal.errors.count, "error") %> prohibited this voluntario_temporal from being saved:</h2>
+
+      <ul>
+      <% @voluntario_temporal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :correo %><br>
+    <%= f.text_field :correo %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono %><br>
+    <%= f.number_field :telefono %>
+  </div>
+  <div class="field">
+    <%= f.label :ocupacion %><br>
+    <%= f.text_field :ocupacion %>
+  </div>
+		<select name="voluntario_temporal[genero]">
+		  <option value="true" selected="selected">Varon</option>
+		  <option value="false">Mujer</option>
+		</select>
+  <div class="field">
+    <%= f.label :activo %><br>
+    <%= f.check_box :activo %>
+  </div>
+	<div class = "form-group">
+		<a href="javascript:window.history.back();" class="btn btn-danger">&laquo; Cancelar</a>
+		<input type="submit" value="Guardar" class="btn btn-success" />						
+	</div>
+<% end %>

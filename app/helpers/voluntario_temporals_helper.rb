@@ -1,0 +1,2 @@
+module VoluntarioTemporalsHelper
+end

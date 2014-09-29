@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @voluntario_temporal.nombre %>
+</p>
+
+<p>
+  <strong>Correo:</strong>
+  <%= @voluntario_temporal.correo %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @voluntario_temporal.telefono %>
+</p>
+
+<p>
+  <strong>Ocupacion:</strong>
+  <%= @voluntario_temporal.ocupacion %>
+</p>
+
+<p>
+  <strong>Genero:</strong>
+  <%if @voluntario_temporal.genero==true %>
+	<%= "Varon"%>
+	<%else%>
+	<%= "Mujer" %>
+	<%end%>
+</p>
+
+<p>
+  <strong>Activo:</strong>
+  <%= @voluntario_temporal.activo %>
+</p>
+<%= link_to 'Atras', voluntario_temporals_path,:class=>"btn btn-danger" %>|
+<%= link_to 'Editar', edit_voluntario_temporal_path(@voluntario_temporal), :class=>"btn btn-success"%> 
+

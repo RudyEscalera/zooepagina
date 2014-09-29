@@ -1,0 +1,35 @@
+<h1>Lista veterinarias</h1>
+<div class="table-responsive">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th class = "info">Nombre</th>
+      <th class = "success">Direccion</th>
+       <th></th>
+        <th>Opciones</th>
+	    <th></th>
+    </tr>
+  </thead>
+  <tbody>
+				<div class="col-md-4">	
+						<%= link_to 'Nueva Veterinaria', new_veterinarium_path, :class=>"btn btn-warning"  %>					
+			</div>
+		</br>
+		</br>
+	</br>
+    <% @veterinaria.each do |veterinarium| %>
+      <tr>
+        <td class = "info"><%= link_to veterinarium.nombre , veterinarium%></td>
+        <td class = "success"><%=veterinarium.direccion %></td>
+        <td><%= link_to 'Mostrar', veterinarium, :class=>"btn btn-success" %></td>
+        <td><%= link_to 'Editar', edit_veterinarium_path(veterinarium),:class=>"btn btn-warning" %></td>
+        <td><%= link_to 'Eliminar', veterinarium, method: :delete, data: { confirm: 'esta seguro?' },:class=>"btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+
