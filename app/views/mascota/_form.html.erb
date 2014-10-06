@@ -1,0 +1,69 @@
+<%= form_for(@mascotum) do |f| %>
+  <% if @mascotum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mascotum.errors.count, "error") %> prohibited this mascotum from being saved:</h2>
+
+      <ul>
+      <% @mascotum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field col-md-5">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre, :class => "form-control input" %>
+  </div>
+  <div class="field col-md-5">
+    <%= f.label :especie %><br>
+    <%= f.text_field :especie, :class => "form-control input" %>
+  </div>
+  <div class="field col-md-5">
+    <%= f.label :raza %><br>
+    <%= f.text_field :raza, :class => "form-control input" %>
+  </div>
+  <div class="field col-md-2">
+    <%= f.label :sexo %><br>
+    <%= f.text_field :sexo, :class => "form-control input" %>
+  </div>
+  <div class="field col-md-2">
+    <%= f.label :edad %><br>
+    <%= f.number_field :edad, :class => "form-control input" %>
+  </div>
+  <div class="field col-md-5">
+    <%= f.label :color %><br>
+    <%= f.text_field :color, :class => "form-control input" %>
+  </div>
+  <div class="field col-md-5">
+    <%= f.label :estado %><br>
+    <%= f.text_field :estado, :class => "form-control input" %>
+  </div>
+  <div class="field col-md-2">
+    <%= f.label :depar %><br>
+    <%= f.text_field :depar, :class => "form-control input" %>
+  </div>
+  <div class="field col-md-2">
+    <%= f.label :hexa %><br>
+    <%= f.text_field :hexa, :class => "form-control input" %>
+  </div>
+  <div class="field col-md-2">
+    <%= f.label :octa %><br>
+    <%= f.text_field :octa, :class => "form-control input" %>
+  </div>
+  <div class="field col-md-2">
+    <%= f.label :anti %><br>
+    <%= f.text_field :anti, :class => "form-control input" %>
+  </div>
+  <div class="field col-md-2">
+    <%= f.label :esterilizacion %><br>
+    <%= f.text_field :esterilizacion, :class => "form-control input" %>
+  </div>
+  <div class="field col-md-5">
+    <%= f.label :observacion %><br>
+    <%= f.text_area :observacion, :class => "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit :Guardar %>
+  </div>
+<% end %>

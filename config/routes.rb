@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :mascota
+
   resources :voluntario_temporals
 
   resources :veterinaria
