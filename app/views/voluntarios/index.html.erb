@@ -1,0 +1,34 @@
+<h1>Lita voluntarios</h1>
+
+<div class="table-responsive">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th class = "info">Nombre</th>
+      <th class = "success">Apellido paterno</th>
+      <th colspan="2">Opciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+				<div class="col-md-4">	
+								<%= link_to 'Nuevo Voluntario', new_voluntario_path, class: "btn btn-info"%>				
+				</div>
+			</br>
+			</br>
+		</br>
+    <% @voluntarios.each do |voluntario| %>
+      <tr>
+        <td class = "info"><%= voluntario.nombre %></td>
+        <td class = "success"><%= voluntario.apellido_paterno %></td>
+        <td><%= link_to 'Mostrar', voluntario,class: "btn btn-success" %></td>
+        <td><%= link_to 'Editar', edit_voluntario_path(voluntario),class: "btn btn-warning" %></td>
+        <!--<td><%= link_to 'Destroy', voluntario, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+

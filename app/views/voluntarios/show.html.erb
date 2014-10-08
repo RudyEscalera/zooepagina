@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @voluntario.nombre %>
+</p>
+
+<p>
+  <strong>Apellido paterno:</strong>
+  <%= @voluntario.apellido_paterno %>
+</p>
+
+<p>
+  <strong>Apellido materno:</strong>
+  <%= @voluntario.apellido_materno %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @voluntario.estado %>
+</p>
+
+<p>
+  <strong>Ci:</strong>
+  <%= @voluntario.ci %>
+</p>
+
+<p>
+  <strong>Fecha nacimiento:</strong>
+  <%= @voluntario.fecha_nacimiento %>
+</p>
+
+<p>
+  <strong>Lugar nacimiento:</strong>
+  <%= @voluntario.lugar_nacimiento %>
+</p>
+
+<p>
+  <strong>Edad:</strong>
+  <%= @voluntario.edad %>
+</p>
+
+<p>
+  <strong>Estado civil:</strong>
+  <%= @voluntario.estado_civil %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @voluntario.direccion %>
+</p>
+
+<p>
+  <strong>Telefono fijo:</strong>
+  <%= @voluntario.telefono_fijo %>
+</p>
+
+<p>
+  <strong>Telefono movil:</strong>
+  <%= @voluntario.telefono_movil %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @voluntario.email %>
+</p>
+
+<p>
+  <strong>Licensia conducir:</strong>
+  <%= @voluntario.licensia_conducir %>
+</p>
+
+<p>
+  <strong>Formacion academica:</strong>
+  <%= @voluntario.formacion_academica %>
+</p>
+<%= link_to 'Atras', voluntarios_path, class: "btn btn-danger"  %> |
+<%= link_to 'Editar', edit_voluntario_path(@voluntario), class: "btn btn-warning" %> 
+

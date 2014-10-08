@@ -22,13 +22,12 @@
 
 .contenido{
 	position: absolute;
-	width: 60%;
+	width: 60%;	
 	left: 20%;
 	top: 15%;
 	height: auto;
-	background-color: #9ACD32;
+	background-color:rgba(192,203,109,.5);
 	border: 1px solid #cccccc;
-	background: #9ACD32 top repeat-x;
 	color: #222222;
 	border-radius: 10px;
 }

@@ -12,7 +12,7 @@
   </thead>
   <tbody>
 				<div class="col-md-4">	
-						<%= link_to 'Nueva Veterinaria', new_veterinarium_path, :class=>"btn btn-warning"  %>					
+						<%= link_to 'Nueva Veterinaria', new_veterinarium_path, :class=>"btn btn-info"  %>					
 			</div>
 		</br>
 		</br>
@@ -21,11 +21,12 @@
       <tr>
         <td class = "info"><%= link_to veterinarium.nombre , veterinarium%></td>
         <td class = "success"><%=veterinarium.direccion %></td>
-        <td><%= link_to 'Mostrar', veterinarium, :class=>"btn btn-success" %></td>
+        <td><%= link_to 'Ver', veterinarium, :class=>"btn btn-success" %></td>
         <td><%= link_to 'Editar', edit_veterinarium_path(veterinarium),:class=>"btn btn-warning" %></td>
-        <td><%= link_to 'Eliminar', veterinarium, method: :delete, data: { confirm: 'esta seguro?' },:class=>"btn btn-danger" %></td>
+        <td><%= link_to 'Eliminar', veterinarium, method: :delete, data: { confirm: 'esta seguro?' },:class=>"btn btn-danger" %></td>	
       </tr>
     <% end %>
+		<td>es el caso de uso buscar veterinaria</td>
   </tbody>
 </table>
 </div>

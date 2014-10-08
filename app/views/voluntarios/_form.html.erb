@@ -1,0 +1,78 @@
+<%= form_for(@voluntario) do |f| %>
+  <% if @voluntario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@voluntario.errors.count, "error") %> prohibited this voluntario from being saved:</h2>
+
+      <ul>
+      <% @voluntario.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre ,placeholder:"nombre"%>
+  </div>
+  <div class="field">
+    <%= f.label :apellido_paterno %><br>
+    <%= f.text_field :apellido_paterno,placeholder:"Apelido Paterno" %>
+  </div>
+  <div class="field">
+    <%= f.label :apellido_materno %><br>
+    <%= f.text_field :apellido_materno,placeholder:"Apelido Materno" %>
+  </div>
+  <div class="field">
+    <%= f.label :estado %><br>
+    <%= f.select(:estado,options_for_select([['Activo', "activo"], ['No activo',"desactivado"]], 2))%>
+  </div>
+  <div class="field">
+    <%= f.label :ci %><br>
+    <%= f.number_field :ci ,placeholder:"ci"%>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_nacimiento %><br>
+    <%= f.date_select :fecha_nacimiento %>
+  </div>
+  <div class="field">
+    <%= f.label :lugar_nacimiento %><br>
+    <%= f.text_field :lugar_nacimiento ,placeholder:"Lugar Nacimiento"%>
+  </div>
+  <div class="field">
+    <%= f.label :edad %><br>
+    <%= f.number_field :edad, placeholder:"Edad" %>
+  </div>
+  <div class="field">
+    <%= f.label :estado_civil %><br>
+    <%= f.select(:estado,options_for_select([['Casado', "casado"], ['Soltero',"soltero"]], 2))%>
+  </div>
+  <div class="field">
+    <%= f.label :direccion %><br>
+    <%= f.text_field :direccion,placeholder:"Direccion" %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono_fijo %><br>
+    <%= f.number_field :telefono_fijo,placeholder:"Telefono Fijo" %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono_movil %><br>
+    <%= f.number_field :telefono_movil,placeholder:"Telefono Movil" %>
+  </div>
+  <div class="field">
+    <%= f.label :Correo %><br>
+    <%= f.text_field :email,placeholder:" Correo" %>
+  </div>
+  <div class="field">
+    <%= f.label :licensia_conducir %><br>
+    <%= f.number_field :licensia_conducir,placeholder:"Licensia de conducir" %>
+  </div>
+  <div class="field">
+    <%= f.label :formacion_academica %><br>
+    <%= f.text_area :formacion_academica,placeholder:"Formacion Academica" %>
+  </div>
+  <div class="actions">
+		<%= link_to 'Back', voluntarios_path , class:"btn btn-danger"%>
+    <%= f.submit :guardar, class: "btn btn-success" %>
+  </div>
+<% end %>

@@ -1,6 +1,9 @@
 class VeterinariaController < ApplicationController
+   attr_accessor :direccion, :telefono, :movil, :encargado, :activo
   before_action :set_veterinarium, only: [:show, :edit, :update, :destroy]
 
+  
+  
   # GET /veterinaria
   # GET /veterinaria.json
   def index
