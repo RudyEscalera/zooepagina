@@ -1,0 +1,22 @@
+<h1>Ver Noticia</h1>
+
+<p id="notice"><%= notice %></p>
+
+<div align="left"> 
+	<p>
+	  <strong>Titulo:</strong>
+	  <%= @noticium.titulo %>
+	</p>
+
+	<p>
+	  <strong>Categoria:</strong>
+	  <%= @noticium.categoria %>
+	</p>
+
+	<p>
+	  <strong>Contenido:</strong>
+	  <%= @noticium.contenido %>
+	</p>
+</div>
+<%= link_to '<< Atras', noticia_path, :class => 'btn btn-default' %>
+<%= link_to 'Editar Noticia', edit_noticium_path(@noticium), :class => 'btn btn-warning' %> 
