@@ -17,7 +17,8 @@
   </div>
   <div class="field col-md-5">
     <%= f.label :especie %><br>
-    <%= f.text_field :especie, :class => "form-control input" %>
+    <%= f.select(:especie,options_for_select([['Perro', "perro"], ['Gato',"gato"]], 2)) %>
+
   </div>
   <div class="field col-md-5">
     <%= f.label :raza %><br>
@@ -25,7 +26,7 @@
   </div>
   <div class="field col-md-2">
     <%= f.label :sexo %><br>
-    <%= f.text_field :sexo, :class => "form-control input" %>
+    <%= f.select(:sexo,options_for_select([['Macho', "macho"], ['Hembra',"hembra"]], 2)) %>
   </div>
   <div class="field col-md-2">
     <%= f.label :edad %><br>
@@ -37,7 +38,8 @@
   </div>
   <div class="field col-md-5">
     <%= f.label :estado %><br>
-    <%= f.text_field :estado, :class => "form-control input" %>
+    <%= f.select(:estado,options_for_select([['Adopcion', "adopcion"], ['Recuperacion',"recuperacion"], ['Adoptado',"adoptado"]], 3)) %>
+
   </div>
   <div class="field col-md-2">
     <%= f.label :depar %><br>

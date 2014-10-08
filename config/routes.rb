@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :hogar_temporals
+
   resources :voluntarios
   resources :noticia
   resources :mascota

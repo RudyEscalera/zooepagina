@@ -5,6 +5,11 @@ class NoticiaController < ApplicationController
   # GET /noticia.json
   def index
     @noticia = Noticium.all
+    
+    # @noticias = Noticium.search(params[:searchbox])
+    # respond_to do |format|
+    #   format.html # index.html.erb
+    # end
   end
 
   # GET /noticia/1

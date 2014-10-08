@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008013428) do
+ActiveRecord::Schema.define(version: 20141008092645) do
+
+  create_table "hogar_temporals", force: true do |t|
+    t.string   "ci"
+    t.string   "nombres"
+    t.string   "apellidos"
+    t.string   "telefono_fijo"
+    t.text     "direccion"
+    t.string   "numero"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "mascota", force: true do |t|
     t.string   "nombre"

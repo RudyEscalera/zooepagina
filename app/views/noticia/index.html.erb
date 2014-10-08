@@ -6,8 +6,11 @@
     <%= text_field_tag "searchbox", params[:searchbox], :placeholder => "Buscar" %>
     <%= submit_tag "Buscar", :name => nil %>
 <% end %>
+
+
+
 <br>
-<a href="/mascota/new" class="btn btn-default">
+<a href="/noticia/new" class="btn btn-default">
   <img src="/assets/noticia.png"  style="width:50px;height:50px">
   <%= link_to '+ Registrar Noticia', new_noticium_path, :class => 'btn btn-info' %>
 </a>

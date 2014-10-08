@@ -15,9 +15,9 @@
     <%= f.label :titulo %><br>
     <%= f.text_field :titulo, :class => "form-control input" %>
   </div>
-  <div class="field col-md-5">
+  <div class="field col-md-4">
     <%= f.label :categoria %><br>
-    <%= f.text_field :categoria, :class => "form-control input" %>
+    <%= f.select(:categoria,options_for_select([['Evento', "evento"], ['Noticia',"noticia"]], 2)) %>
   </div>
   <div class="field col-md-5">
     <%= f.label :contenido %><br>
