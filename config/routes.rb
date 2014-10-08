@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   resources :voluntarios
+=======
+  resources :noticia
+>>>>>>> FETCH_HEAD
 
   resources :mascota
 

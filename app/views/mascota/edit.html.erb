@@ -2,5 +2,6 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Ver Mascota', @mascotum %> |
-<%= link_to 'Atras', mascota_path %>
+<%= link_to 'Ver Mascota', @mascotum, :class => "btn btn-primary" %>
+<br><br>
+<%= link_to '<< Atras', mascota_path, :class => "btn btn-default" %>

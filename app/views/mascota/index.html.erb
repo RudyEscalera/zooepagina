@@ -2,11 +2,25 @@
   <h1>Buscar Mascotas</h1>
 </center>
 
+
 <%= form_tag({:controller => "mascota", :action => "index"}, :method => :get) do %>
     <%= text_field_tag "searchbox", params[:searchbox], :placeholder => "Buscar" %>
     <%= submit_tag "Buscar", :name => nil %>
 <% end %>
+<!-- Icono de imprimir reportes -->
+<p align="right">
+  <a href="" title="" class="btn btn-default">  
+    <img src="/assets/impresora.png"  style="width:48px;height:48px" >
+  </a>
+  Imprimir Lista de Mascotas
+</p>
 
+<br>
+<a href="/mascota/new" class="btn btn-default">
+  <img src="/assets/mascota.png"  style="width:50px;height:50px" >
+  <%= link_to '+ Registrar Mascota', new_mascotum_path, :class => "btn btn-info" %>
+</a>
+<br>
 <br>
 <div class="table-responsive">
   <table class="table table-striped">
@@ -45,9 +59,9 @@
           <!-- <td><%= mascotum.anti %></td> -->
           <!-- <td><%= mascotum.esterilizacion %></td> -->
           <!-- <td><%= mascotum.observacion %></td> -->
-          <td><%= link_to 'Ver Mascota', mascotum %></td>
-          <td><%= link_to 'Editar Mascota', edit_mascotum_path(mascotum) %></td>
-          <td><%= link_to 'Destroy', mascotum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Ver Mascota', mascotum, :class => 'btn btn-primary' %></td>
+          <td><%= link_to 'Editar Mascota', edit_mascotum_path(mascotum), :class => 'btn btn-warning' %></td>
+          <td><%= link_to 'Destroy', mascotum, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
         </tr>
       <% end %>
     </tbody>
@@ -55,5 +69,4 @@
 
   <br>
 
-  <%= link_to 'Registrar Mascota', new_mascotum_path %>
 </div>

@@ -1,6 +1,7 @@
 class MascotaController < ApplicationController
   before_action :set_mascotum, only: [:show, :edit, :update, :destroy]
 
+  
   # GET /mascota
   # GET /mascota.json
   def index
