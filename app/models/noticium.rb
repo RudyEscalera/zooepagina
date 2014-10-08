@@ -6,4 +6,12 @@ class Noticium < ActiveRecord::Base
     		scoped	
   		end
   	end
+
+  	validates :titulo, 
+	presence:{ message:": Introduzca un titulo" }, 
+	length: { maximum: 10 }, 
+	format:{ with: /\A[a-zA-Z]+\z/,message: "No use simbolos solo letras" }
+
+	validates :contenido, 
+	presence:{ message:": Introduzca un contenido" }
 end
