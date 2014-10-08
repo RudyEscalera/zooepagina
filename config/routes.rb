@@ -1,14 +1,8 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   resources :voluntarios
-=======
   resources :noticia
->>>>>>> FETCH_HEAD
-
   resources :mascota
-
   resources :voluntario_temporals
-
   resources :veterinaria
 
   get 'welcome/index'
