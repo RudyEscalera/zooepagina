@@ -1,11 +1,14 @@
 class MascotaController < ApplicationController
   before_action :set_mascotum, only: [:show, :edit, :update, :destroy]
 
+
   
   # GET /mascota
   # GET /mascota.json
   def index
     @mascota = Mascotum.all
+
+    
 
   end
 
@@ -17,6 +20,8 @@ class MascotaController < ApplicationController
   # GET /mascota/new
   def new
     @mascotum = Mascotum.new
+    @voluntarios = VoluntarioTemporal.where( :activo => true)
+    
   end
 
   # GET /mascota/1/edit

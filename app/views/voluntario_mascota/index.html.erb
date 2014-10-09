@@ -1,0 +1,23 @@
+<h1>Listing voluntario_mascota</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @voluntario_mascota.each do |voluntario_mascotum| %>
+      <tr>
+        <td><%= link_to 'Show', voluntario_mascotum %></td>
+        <td><%= link_to 'Edit', edit_voluntario_mascotum_path(voluntario_mascotum) %></td>
+        <td><%= link_to 'Destroy', voluntario_mascotum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Voluntario mascotum', new_voluntario_mascotum_path %>

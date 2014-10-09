@@ -2,4 +2,20 @@
 
 <%= render 'form' %>
 
+<hr>&nbsp;
+<hr>&nbsp;
+<hr>
+<hr>
+<hr>
+<!-- Asignar voluntarios -->
+<h3>Aignar voluntario</h3>
+
+<select >
+  <% @voluntarios.each do |voluntario| %>
+    <option value=" <%= voluntario.nombre %> "><%= voluntario.nombre %></option>
+  <% end %>
+</select>
+
+<!-- /Asignar voluntarios -->
+
 <%= link_to '<< Atras', mascota_path, :class => "btn btn-default" %>

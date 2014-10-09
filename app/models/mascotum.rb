@@ -40,6 +40,9 @@ class Mascotum < ActiveRecord::Base
 	format:{ with: /\A[a-zA-Z]+\z/,message: "No use simbolos solo letras" },
 	length: { maximum: 2 } 
 
+	# validates :nombre,
+	# uniqueness: {case_sensitive: false ,message: "ya esta registrado"}
+
     
 
 
