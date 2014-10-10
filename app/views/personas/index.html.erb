@@ -1,0 +1,34 @@
+<h1>Buscar Adopciones</h1>
+
+<div class="table-responsive">
+  <table class="table table-striped" >
+    <thead>
+      <tr>
+        <th>Ci</th>
+        <th>Nombres</th>
+        <th>Apellido paterno</th>
+        <th>Apellido materno</th>
+        <th>Fecha nacimiento</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @personas.each do |persona| %>
+        <tr>
+          <td><%= persona.ci %></td>
+          <td><%= persona.nombres %></td>
+          <td><%= persona.apellido_paterno %></td>
+          <td><%= persona.apellido_materno %></td>
+          <td><%= persona.fecha_nacimiento %></td>
+          <td><%= link_to 'Ver', persona, :class => 'btn btn-primary' %></td>
+          <td><%= link_to 'Editar', edit_persona_path(persona), :class => 'btn btn-warning' %></td>
+          <td><%= link_to 'Eliminar', persona, method: :delete, data: { confirm: 'Esta seguro?' }, :class => 'btn btn-danger' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br>
+
+<%= link_to 'Registrar persona', new_persona_path, :class => 'btn btn-info' %>

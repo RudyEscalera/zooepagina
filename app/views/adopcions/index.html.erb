@@ -1,0 +1,39 @@
+<h1>Listing adopcions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Numero adultos</th>
+      <th>Numero ninios</th>
+      <th>Numero perros</th>
+      <th>Numero gatos</th>
+      <th>Numero Otros</th>
+      <th>Referencia casa</th>
+      <th>Numero referencia1</th>
+      <!-- <th>Numero referencia2</th> -->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @adopcions.each do |adopcion| %>
+      <tr>
+        <td><%= adopcion.numero_adultos %></td>
+        <td><%= adopcion.numero_ninios %></td>
+        <td><%= adopcion.numero_perros %></td>
+        <td><%= adopcion.numero_gatos %></td>
+        <td><%= adopcion.numero_otros %></td>
+        <td><%= adopcion.referencia_casa %></td>
+        <td><%= adopcion.numero_referencia1 %></td>
+        <td><%= adopcion.numero_referencia2 %></td>
+        <td><%= link_to 'Ver', adopcion %></td>
+        <td><%= link_to 'Editar', edit_adopcion_path(adopcion) %></td>
+        <td><%= link_to 'Eliminar', adopcion, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Adopcion', new_adopcion_path %>

@@ -1,4 +1,4 @@
-<%= form_for(@mascotum) do |f| %>
+<%= form_for(@mascotum, html: {multipart: true}) do |f| %>
   <% if @mascotum.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@mascotum.errors.count, "error") %> prohibited this mascotum from being saved:</h2>
@@ -11,60 +11,70 @@
     </div>
   <% end %>
 
-  <div class="field col-md-5">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre, :class => "form-control input" %>
+  <div >
+    *
+    <%= f.label :nombre %>
+    <%= f.text_field :nombre, :required => true %>
   </div>
-  <div class="field col-md-5">
-    <%= f.label :especie %><br>
+  <div >
+    <%= f.label :especie %>
     <%= f.select(:especie,options_for_select([['Perro', "perro"], ['Gato',"gato"]], 2)) %>
 
   </div>
-  <div class="field col-md-5">
-    <%= f.label :raza %><br>
-    <%= f.text_field :raza, :class => "form-control input" %>
+  <div >
+    *
+    <%= f.label :raza %>
+    <%= f.text_field :raza, :required => true %>
   </div>
-  <div class="field col-md-2">
-    <%= f.label :sexo %><br>
+  <div >
+    <%= f.label :sexo %>
     <%= f.select(:sexo,options_for_select([['Macho', "macho"], ['Hembra',"hembra"]], 2)) %>
   </div>
-  <div class="field col-md-2">
-    <%= f.label :edad %><br>
-    <%= f.number_field :edad, :class => "form-control input" %>
+  <div >
+    *
+    <%= f.label :edad %>
+    <%= f.number_field :edad, :required => true %>
   </div>
-  <div class="field col-md-5">
-    <%= f.label :color %><br>
-    <%= f.text_field :color, :class => "form-control input" %>
+  <div >
+    *
+    <%= f.label :color %>
+    <%= f.text_field :color, :required => true %>
   </div>
-  <div class="field col-md-5">
-    <%= f.label :estado %><br>
+  <div >
+    <%= f.label :estado %>
     <%= f.select(:estado,options_for_select([['Adopcion', "adopcion"], ['Recuperacion',"recuperacion"], ['Adoptado',"adoptado"]], 3)) %>
 
   </div>
-  <div class="field col-md-2">
-    <%= f.label :depar %><br>
-    <%= f.text_field :depar, :class => "form-control input" %>
+  <div >
+    <%= f.label :depar %>
+    <%= f.check_box :depar %>
   </div>
-  <div class="field col-md-2">
-    <%= f.label :hexa %><br>
-    <%= f.text_field :hexa, :class => "form-control input" %>
+  <div >
+    <%= f.label :hexa %>
+    <%= f.check_box :hexa %>
   </div>
-  <div class="field col-md-2">
-    <%= f.label :octa %><br>
-    <%= f.text_field :octa, :class => "form-control input" %>
+  <div >
+    <%= f.label :octa %>
+    <%= f.check_box :octa %>
   </div>
-  <div class="field col-md-2">
-    <%= f.label :anti %><br>
-    <%= f.text_field :anti, :class => "form-control input" %>
+  <div >
+    <%= f.label :anti %>
+    <%= f.check_box :anti %>
   </div>
-  <div class="field col-md-2">
-    <%= f.label :esterilizacion %><br>
-    <%= f.text_field :esterilizacion, :class => "form-control input" %>
+  <div >
+    <%= f.label :esterilizacion %>
+    <%= f.check_box :esterilizacion %>
   </div>
-  <div class="field col-md-5">
-    <%= f.label :observacion %><br>
-    <%= f.text_area :observacion, :class => "form-control" %>
+  <div >
+    <%= f.label :observacion %>
+    <%= f.text_area :observacion, :rows => 10, :cols => 30%>
   </div>
+
+  <div >
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+  
   <div class="actions">
     <%= f.submit :Guardar, :class => 'btn btn-success' %>
   </div>

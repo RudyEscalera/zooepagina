@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ci:</strong>
+  <%= @persona.ci %>
+</p>
+
+<p>
+  <strong>Nombres:</strong>
+  <%= @persona.nombres %>
+</p>
+
+<p>
+  <strong>Apellido paterno:</strong>
+  <%= @persona.apellido_paterno %>
+</p>
+
+<p>
+  <strong>Apellido materno:</strong>
+  <%= @persona.apellido_materno %>
+</p>
+
+<p>
+  <strong>Fecha nacimiento:</strong>
+  <%= @persona.fecha_nacimiento %>
+</p>
+
+<h3>REGISTRAR ADOPCION</h3>
+
+<%= link_to '+Registrar', new_adopcion_path %>
+<br>
+<%= link_to 'Edit', edit_persona_path(@persona) %> 
+<%= link_to 'Back', personas_path %>

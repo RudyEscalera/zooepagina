@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141009162827) do
+ActiveRecord::Schema.define(version: 20141009201926) do
+
+  create_table "adopcions", force: true do |t|
+    t.integer  "numero_adultos"
+    t.integer  "numero_ninios"
+    t.integer  "numero_perros"
+    t.integer  "numero_gatos"
+    t.integer  "numero_otros"
+    t.string   "referencia_casa"
+    t.string   "numero_referencia1"
+    t.string   "numero_referencia2"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "hogar_temporals", force: true do |t|
     t.string   "ci"
@@ -46,6 +59,16 @@ ActiveRecord::Schema.define(version: 20141009162827) do
     t.string   "titulo"
     t.string   "categoria"
     t.text     "contenido"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "personas", force: true do |t|
+    t.string   "ci"
+    t.string   "nombres"
+    t.string   "apellido_paterno"
+    t.string   "apellido_materno"
+    t.date     "fecha_nacimiento"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

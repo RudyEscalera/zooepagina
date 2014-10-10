@@ -6,9 +6,11 @@ class MascotaController < ApplicationController
   # GET /mascota
   # GET /mascota.json
   def index
-    @mascota = Mascotum.all
+    # @mascota = Mascotum.all
 
-    
+    @palabra = ''
+    @palabra = params[:palabra]
+    @mascota = Mascotum.where("nombre LIKE '#{@palabra}%'")
 
   end
 
@@ -20,8 +22,8 @@ class MascotaController < ApplicationController
   # GET /mascota/new
   def new
     @mascotum = Mascotum.new
-    @voluntarios = VoluntarioTemporal.where( :activo => true)
-    
+    #@voluntarios = VoluntarioTemporal.where( :activo => true)
+
   end
 
   # GET /mascota/1/edit
@@ -35,7 +37,7 @@ class MascotaController < ApplicationController
 
     respond_to do |format|
       if @mascotum.save
-        format.html { redirect_to @mascotum, notice: 'Mascotum was successfully created.' }
+        format.html { redirect_to @mascotum, notice: 'Se creo la mascota...!!!' }
         format.json { render :show, status: :created, location: @mascotum }
       else
         format.html { render :new }

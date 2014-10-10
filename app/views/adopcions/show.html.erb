@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Numero adultos:</strong>
+  <%= @adopcion.numero_adultos %>
+</p>
+
+<p>
+  <strong>Numero ninios:</strong>
+  <%= @adopcion.numero_ninios %>
+</p>
+
+<p>
+  <strong>Numero perros:</strong>
+  <%= @adopcion.numero_perros %>
+</p>
+
+<p>
+  <strong>Numero gatos:</strong>
+  <%= @adopcion.numero_gatos %>
+</p>
+
+<p>
+  <strong>Numero Otros:</strong>
+  <%= @adopcion.numero_otros %>
+</p>
+
+<p>
+  <strong>Referencia casa:</strong>
+  <%= @adopcion.referencia_casa %>
+</p>
+
+<p>
+  <strong>Numero referencia1:</strong>
+  <%= @adopcion.numero_referencia1 %>
+</p>
+
+<p>
+  <strong>Numero referencia2:</strong>
+  <%= @adopcion.numero_referencia2 %>
+</p>
+
+<%= link_to 'Editar', edit_adopcion_path(@adopcion) %> |
+<%= link_to '<< Atras', adopcions_path %>

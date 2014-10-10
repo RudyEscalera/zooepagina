@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :personas
+
+  resources :adopcions
+
   resources :voluntario_mascota
 
   resources :hogar_temporals

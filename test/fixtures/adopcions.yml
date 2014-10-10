@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numero_adultos: 1
+  numero_ninios: 1
+  numero_perros: 1
+  numero_gatos: 1
+  numero: 
+  referencia_casa: MyString
+  numero_referencia1: MyString
+  numero_referencia2: MyString
+
+two:
+  numero_adultos: 1
+  numero_ninios: 1
+  numero_perros: 1
+  numero_gatos: 1
+  numero: 
+  referencia_casa: MyString
+  numero_referencia1: MyString
+  numero_referencia2: MyString

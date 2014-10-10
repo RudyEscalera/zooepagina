@@ -3,9 +3,11 @@
 </center>
 
 <%= form_tag({:controller => "noticia", :action => "index"}, :method => :get) do %>
-    <%= text_field_tag "searchbox", params[:searchbox], :placeholder => "Buscar" %>
+    <%= text_field_tag "searchbox", params[:searchbox], :placeholder => "Buscar", :name => 'palabra' %>
     <%= submit_tag "Buscar", :name => nil %>
 <% end %>
+<br>
+<h1><%= @palabra %> &nbsp; </h1>
 
 
 

@@ -1,0 +1,49 @@
+<%= form_for(@adopcion) do |f| %>
+  <% if @adopcion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@adopcion.errors.count, "error") %> prohibited this adopcion from being saved:</h2>
+
+      <ul>
+      <% @adopcion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :numero_adultos %><br>
+    <%= f.number_field :numero_adultos %>
+  </div>
+  <div class="field">
+    <%= f.label :numero_ninios %><br>
+    <%= f.number_field :numero_ninios %>
+  </div>
+  <div class="field">
+    <%= f.label :numero_perros %><br>
+    <%= f.number_field :numero_perros %>
+  </div>
+  <div class="field">
+    <%= f.label :numero_gatos %><br>
+    <%= f.number_field :numero_gatos %>
+  </div>
+  <div class="field">
+    <%= f.label :numero_otros %><br>
+    <%= f.number_field :numero_otros %>
+  </div>
+  <div class="field">
+    <%= f.label :referencia_casa %><br>
+    <%= f.select(:referencia_casa,options_for_select([['Propia', "propia"], ['Alquiler',"alquiler"], ['Antricredito',"antricredito"]], 3)) %>
+  </div>
+  <div class="field">
+    <%= f.label :numero_referencia1 %><br>
+    <%= f.text_field :numero_referencia1 %>
+  </div>
+  <div class="field">
+    <%= f.label :numero_referencia2 %><br>
+    <%= f.text_field :numero_referencia2 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
