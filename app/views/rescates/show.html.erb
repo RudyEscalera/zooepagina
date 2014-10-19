@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Direccion rescate:</strong>
+  <%= @rescate.direccion_rescate %>
+</p>
+
+<p>
+  <strong>Observacion:</strong>
+  <%= @rescate.observacion %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @rescate.fecha %>
+</p>
+<p>
+  <strong>Voluntario:</strong>
+  <%= @voluntario %>
+</p>
+
+<%= link_to '<< Atras', rescates_path,class: "btn btn-default"  %>|
+<%= link_to 'Editar', edit_rescate_path(@rescate),class: "btn btn-warning" %> 
+

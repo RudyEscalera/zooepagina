@@ -74,6 +74,26 @@
   <strong>Formacion academica:</strong>
   <%= @voluntario.formacion_academica %>
 </p>
-<%= link_to 'Atras', voluntarios_path, class: "btn btn-danger"  %> |
+<%= link_to '<< Atras', voluntarios_path, class: "btn btn-default"  %> |
 <%= link_to 'Editar', edit_voluntario_path(@voluntario), class: "btn btn-warning" %> 
+<a href="#" class="btn btn-success"
+   data-toggle="modal"
+   data-target="#basicModal">Ver lista de mascotas actuales</a>
+
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Mis Mascotas</h4>
+      </div>
+      <div class="modal-body" style="text-align:center;">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
 

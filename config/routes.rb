@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+
   resources :personas
 
   resources :adopcions
+  resources :rescates
 
   resources :voluntario_mascota
 

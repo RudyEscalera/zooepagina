@@ -1,4 +1,9 @@
 class VeterinariaController < ApplicationController
+  autocomplete :veterinaria, :nombre, :display_value => :nombre, :extra_data =>[:direccion,:telefono] do |items|
+     respond_to do |format|
+       format_json{render :json => @items}
+     end
+   end 
    attr_accessor :direccion, :telefono, :movil, :encargado, :activo
   before_action :set_veterinarium, only: [:show, :edit, :update, :destroy]
 
@@ -8,6 +13,7 @@ class VeterinariaController < ApplicationController
   # GET /veterinaria.json
   def index
     @veterinaria = Veterinarium.all
+
   end
 
   # GET /veterinaria/1
