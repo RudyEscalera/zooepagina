@@ -28,6 +28,7 @@ class VoluntariosController < ApplicationController
   # POST /voluntarios.json
   def create
     @voluntario = Voluntario.new(voluntario_params)
+    @voluntario.edad = Time.now.year-@voluntario.fecha_nacimiento.year
 
     respond_to do |format|
       if @voluntario.save

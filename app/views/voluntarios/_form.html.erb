@@ -39,10 +39,6 @@
     <%= f.text_field :lugar_nacimiento ,placeholder:"Lugar Nacimiento"%>
   </div>
   <div class="field">
-    <%= f.label :edad %><br>
-    <%= f.number_field :edad, placeholder:"Edad" %>
-  </div>
-  <div class="field">
     <%= f.label :estado_civil %><br>
     <%= f.select(:estado_civil,options_for_select([['Casado', "casado"], ['Soltero',"soltero"]], 2))%>
   </div>
