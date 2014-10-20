@@ -30,5 +30,5 @@
   <%= @hogar_temporal.numero %>
 </p>
 
-<%= link_to 'Edit', edit_hogar_temporal_path(@hogar_temporal) %> |
-<%= link_to 'Back', hogar_temporals_path %>
+<%= link_to '<< Atras', hogar_temporals_path, :class => 'btn btn-default' %>
+<%= link_to 'Editar', edit_hogar_temporal_path(@hogar_temporal), :class => 'btn btn-warning' %> 

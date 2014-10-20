@@ -1,7 +1,7 @@
 class MascotaController < ApplicationController
   before_action :set_mascotum, only: [:show, :edit, :update, :destroy]
 
-
+  # @nuevo = true
   
   # GET /mascota
   # GET /mascota.json
@@ -28,6 +28,7 @@ class MascotaController < ApplicationController
 
   # GET /mascota/1/edit
   def edit
+
   end
 
   # POST /mascota
@@ -37,7 +38,7 @@ class MascotaController < ApplicationController
 
     respond_to do |format|
       if @mascotum.save
-        format.html { redirect_to @mascotum, notice: 'Se creo la mascota...!!!' }
+        format.html { redirect_to @mascotum, notice: 'Mascota Registrada!!!' }
         format.json { render :show, status: :created, location: @mascotum }
       else
         format.html { render :new }
@@ -51,7 +52,7 @@ class MascotaController < ApplicationController
   def update
     respond_to do |format|
       if @mascotum.update(mascotum_params)
-        format.html { redirect_to @mascotum, notice: 'Mascotum was successfully updated.' }
+        format.html { redirect_to @mascotum, notice: 'Mascota Editada.' }
         format.json { render :show, status: :ok, location: @mascotum }
       else
         format.html { render :edit }
@@ -65,7 +66,7 @@ class MascotaController < ApplicationController
   def destroy
     @mascotum.destroy
     respond_to do |format|
-      format.html { redirect_to mascota_url, notice: 'Mascotum was successfully destroyed.' }
+      format.html { redirect_to mascota_url, notice: 'Mascota Eliminada.' }
       format.json { head :no_content }
     end
   end

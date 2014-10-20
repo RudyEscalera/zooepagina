@@ -14,6 +14,7 @@ class CreateMascota < ActiveRecord::Migration
       t.string :anti
       t.string :esterilizacion
       t.text :observacion
+      t.string :extension
 
       t.timestamps
     end

@@ -28,7 +28,7 @@ class HogarTemporalsController < ApplicationController
 
     respond_to do |format|
       if @hogar_temporal.save
-        format.html { redirect_to @hogar_temporal, notice: 'Hogar temporal was successfully created.' }
+        format.html { redirect_to @hogar_temporal, notice: 'Hogar temporal Registrado.' }
         format.json { render :show, status: :created, location: @hogar_temporal }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class HogarTemporalsController < ApplicationController
   def update
     respond_to do |format|
       if @hogar_temporal.update(hogar_temporal_params)
-        format.html { redirect_to @hogar_temporal, notice: 'Hogar temporal was successfully updated.' }
+        format.html { redirect_to @hogar_temporal, notice: 'Hogar temporal Editado.' }
         format.json { render :show, status: :ok, location: @hogar_temporal }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class HogarTemporalsController < ApplicationController
   def destroy
     @hogar_temporal.destroy
     respond_to do |format|
-      format.html { redirect_to hogar_temporals_url, notice: 'Hogar temporal was successfully destroyed.' }
+      format.html { redirect_to hogar_temporals_url, notice: 'Hogar temporal Eliminado.' }
       format.json { head :no_content }
     end
   end

@@ -1,7 +1,7 @@
 <%= form_for(@noticium) do |f| %>
   <% if @noticium.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@noticium.errors.count, "error") %> prohibited this noticium from being saved:</h2>
+      <h2><%= pluralize(@noticium.errors.count, "error") %> :</h2>
 
       <ul>
       <% @noticium.errors.full_messages.each do |message| %>
@@ -21,7 +21,7 @@
   </div>
   <div class="field col-md-5">
     <%= f.label :contenido %><br>
-    <%= f.text_area :contenido, :class => "form-control input" %>
+    <%= f.text_area :contenido, :class => "form-control input", size: "20x10" %>
   </div>
   <div class="actions">
     <%= f.submit :Guardar, :class => 'btn btn-success' %>

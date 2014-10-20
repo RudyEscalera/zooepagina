@@ -1,35 +1,42 @@
-<h1>Listing hogar_temporals</h1>
+<h1>Hogares Temporales</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Ci</th>
-      <th>Nombres</th>
-      <th>Apellidos</th>
-      <th>Telefono fijo</th>
-      <th>Direccion</th>
-      <th>Numero</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @hogar_temporals.each do |hogar_temporal| %>
+<a href="/hogar_temporals/new" class="btn btn-default">
+<img src="/assets/hogar.png" style="width:50px;height:50px">
+<%= link_to '+Registrar Hogar temporal', new_hogar_temporal_path, :class => "btn btn-info" %>
+</a>
+<br>
+<br>
+<br>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= hogar_temporal.ci %></td>
-        <td><%= hogar_temporal.nombres %></td>
-        <td><%= hogar_temporal.apellidos %></td>
-        <td><%= hogar_temporal.telefono_fijo %></td>
-        <td><%= hogar_temporal.direccion %></td>
-        <td><%= hogar_temporal.numero %></td>
-        <td><%= link_to 'Show', hogar_temporal %></td>
-        <td><%= link_to 'Edit', edit_hogar_temporal_path(hogar_temporal) %></td>
-        <td><%= link_to 'Destroy', hogar_temporal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Ci</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Telefono fijo</th>
+        <th>Direccion</th>
+        <th>Telefono Movil</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @hogar_temporals.each do |hogar_temporal| %>
+        <tr>
+          <td><%= hogar_temporal.ci %></td>
+          <td><%= hogar_temporal.nombres %></td>
+          <td><%= hogar_temporal.apellidos %></td>
+          <td><%= hogar_temporal.telefono_fijo %></td>
+          <td><%= hogar_temporal.direccion %></td>
+          <td><%= hogar_temporal.numero %></td>
+          <td><%= link_to 'Ver', hogar_temporal %></td>
+          <td><%= link_to 'Editar', edit_hogar_temporal_path(hogar_temporal) %></td>
+          <td><%= link_to 'Eliminar', hogar_temporal, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 
-<%= link_to 'New Hogar temporal', new_hogar_temporal_path %>

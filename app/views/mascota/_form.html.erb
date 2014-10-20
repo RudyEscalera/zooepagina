@@ -19,7 +19,6 @@
   <div >
     <%= f.label :especie %>
     <%= f.select(:especie,options_for_select([['Perro', "perro"], ['Gato',"gato"]], 2)) %>
-
   </div>
   <div >
     *
@@ -32,7 +31,7 @@
   </div>
   <div >
     *
-    <%= f.label :edad %>
+    <label for="edad">Edad meses</label>
     <%= f.number_field :edad, :required => true %>
   </div>
   <div >
@@ -45,34 +44,15 @@
     <%= f.select(:estado,options_for_select([['Adopcion', "adopcion"], ['Recuperacion',"recuperacion"], ['Adoptado',"adoptado"]], 3)) %>
 
   </div>
-  <div >
-    <%= f.label :depar %>
-    <%= f.check_box :depar %>
-  </div>
-  <div >
-    <%= f.label :hexa %>
-    <%= f.check_box :hexa %>
-  </div>
-  <div >
-    <%= f.label :octa %>
-    <%= f.check_box :octa %>
-  </div>
-  <div >
-    <%= f.label :anti %>
-    <%= f.check_box :anti %>
-  </div>
-  <div >
-    <%= f.label :esterilizacion %>
-    <%= f.check_box :esterilizacion %>
-  </div>
+  
   <div >
     <%= f.label :observacion %>
     <%= f.text_area :observacion, :rows => 10, :cols => 30%>
   </div>
 
-  <div >
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+  <div class="field" >
+    <%= f.label :photo %>
+    <%= f.file_field :photo %>
   </div>
   
   <div class="actions">

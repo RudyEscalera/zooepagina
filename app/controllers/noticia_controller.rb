@@ -35,7 +35,7 @@ class NoticiaController < ApplicationController
 
     respond_to do |format|
       if @noticium.save
-        format.html { redirect_to @noticium, notice: 'Noticium was successfully created.' }
+        format.html { redirect_to @noticium, notice: 'Noticia Registrada.' }
         format.json { render :show, status: :created, location: @noticium }
       else
         format.html { render :new }
@@ -49,7 +49,7 @@ class NoticiaController < ApplicationController
   def update
     respond_to do |format|
       if @noticium.update(noticium_params)
-        format.html { redirect_to @noticium, notice: 'Noticium was successfully updated.' }
+        format.html { redirect_to @noticium, notice: 'Noticia Editada.' }
         format.json { render :show, status: :ok, location: @noticium }
       else
         format.html { render :edit }
@@ -63,7 +63,7 @@ class NoticiaController < ApplicationController
   def destroy
     @noticium.destroy
     respond_to do |format|
-      format.html { redirect_to noticia_url, notice: 'Noticium was successfully destroyed.' }
+      format.html { redirect_to noticia_url, notice: 'Noticia Eliminada.' }
       format.json { head :no_content }
     end
   end

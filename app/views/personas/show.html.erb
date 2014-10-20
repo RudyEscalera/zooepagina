@@ -27,7 +27,7 @@
 
 <h3>REGISTRAR ADOPCION</h3>
 
-<%= link_to '+Registrar', new_adopcion_path %>
+<%= link_to '+Registrar Adopcion', new_adopcion_path, :class => 'btn btn-info' %>
 <br>
-<%= link_to 'Edit', edit_persona_path(@persona) %> 
-<%= link_to 'Back', personas_path %>
+<%= link_to '<< Atras', personas_path, :class => 'btn btn-default' %>
+<%= link_to 'Editar', edit_persona_path(@persona), :class => 'btn btn-warning' %> 
