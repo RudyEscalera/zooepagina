@@ -13,19 +13,19 @@
 
   <div class="field">
     <%= f.label :nombre %><br>
-    <%= f.text_field :nombre ,placeholder:"nombre"%>
+    *<%= f.text_field :nombre ,placeholder:"nombre"%>
   </div>
   <div class="field">
     <%= f.label :apellido_paterno %><br>
-    <%= f.text_field :apellido_paterno,placeholder:"Apelido Paterno" %>
+    *<%= f.text_field :apellido_paterno,placeholder:"Apelido Paterno" %>
   </div>
   <div class="field">
     <%= f.label :apellido_materno %><br>
-    <%= f.text_field :apellido_materno,placeholder:"Apelido Materno" %>
+    *<%= f.text_field :apellido_materno,placeholder:"Apelido Materno" %>
   </div>
   <div class="field">
     <%= f.label :estado %><br>
-    <%= f.select(:estado,options_for_select([['Activo', "activo"], ['No activo',"desactivado"]], 2))%>
+    <%= f.select(:estado,options_for_select([['Activo', true], ['No activo',false]], 2))%>
   </div>
   <div class="field">
     <%= f.label :ci %><br>
@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :fecha_nacimiento %><br>
-    <%= f.date_select :fecha_nacimiento %>
+    <%= f.date_select :fecha_nacimiento, start_year:1900, end_year: 2005 %>
   </div>
   <div class="field">
     <%= f.label :lugar_nacimiento %><br>
@@ -45,11 +45,11 @@
   </div>
   <div class="field">
     <%= f.label :estado_civil %><br>
-    <%= f.select(:estado,options_for_select([['Casado', "casado"], ['Soltero',"soltero"]], 2))%>
+    <%= f.select(:estado_civil,options_for_select([['Casado', "casado"], ['Soltero',"soltero"]], 2))%>
   </div>
   <div class="field">
     <%= f.label :direccion %><br>
-    <%= f.text_field :direccion,placeholder:"Direccion" %>
+    *<%= f.text_field :direccion,placeholder:"Direccion" %>
   </div>
   <div class="field">
     <%= f.label :telefono_fijo %><br>
@@ -72,7 +72,7 @@
     <%= f.text_area :formacion_academica,placeholder:"Formacion Academica" %>
   </div>
   <div class="actions">
-		<%= link_to 'Back', voluntarios_path , class:"btn btn-danger"%>
+		<%= link_to 'Atras', voluntarios_path , class:"btn btn-danger"%>
     <%= f.submit :guardar, class: "btn btn-success" %>
   </div>
 <% end %>

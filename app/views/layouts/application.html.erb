@@ -24,15 +24,15 @@
 </br>
 </br>
 <!-- barra izquierda -->
-<div class='row'>
-  <div class="container" style="width: 28%;">
-    <div class="page-header"style="position:fixed; top:5%; left:20px;">
-      <div class="navbar-header">
-        <div class="col-lg-4">
-          <h2><div style="margin-top:0px;" id="forms">Menu Administrador</div></h2>
-					<div class="btn-group-vertical"> 
-					<%= link_to 'Buscar Veterinaria', veterinaria_path,:class=>"btn btn-success btn-lg"%>
-					<%= link_to 'Buscar Voluntario', voluntarios_path, class: "btn btn-success btn-lg" %>
+
+<div class= "barraizquierdafijo">
+  <div class='row'>
+  <div class="col-lg-4" style="width: 28%;">
+    <div class="page-header"style="position:fixed; top:15%; left:20px;">
+        <div class="btn-group-vertical"> 
+             <%= link_to 'Buscar Veterinaria', veterinaria_path,:class=>"btn btn-success btn-lg"%>
+          <%= link_to 'Buscar Voluntario', voluntarios_path, class: "btn btn-success btn-lg" %>
+          <%= link_to 'Buscar Rescate', rescates_path, class: "btn btn-success btn-lg" %>
           <a href="/mascota" class="btn btn-success btn-lg">Mascotas </a>
           <a href="/noticia" class="btn btn-success btn-lg">Noticias</a>
           <a href="/hogar_temporals" class="btn btn-success btn-lg">Hogar Temporal</a>
@@ -40,29 +40,16 @@
             <!-- <img src="/assets/hogar.png" style="width:50px;height:50px"> -->
             Adopciones
           </a>
-				</div>							      
-      </div>      
-   	 </div>
-					    </div>
-						 	 
+          </div>
+</div>
+</div>
+
+
+
+<!-- pie de pagina -->		 	 
     <div class="contenido">
       <div class="starter-template">
-        <p class="lead"><%= yield %>   <div class ="mifooter2">
-        <div class= "row">
-          <div class="col-md-8">
-          <p class ="cambio">&reg; Copyright 2014 by Taller de Sistemas de Informacion. All Rights Reserved.</p>
-          </div>
-          <div class="col-md-4">
-                <div class="mimenu">
-                  <ul>
-                    <li><a href="page-faq.html">FAQ's</a></li>
-                    <li><a href="sitemap.html">Sitemap</a></li>
-                    <li><a href="contact-us.html">Contact</a></li>
-                  </ul>
-              </div>
-        </div>
-        </div>
-        </div>  
+        <p class="lead"><%= yield %>   
 					<!-- pie de pagina --> 
 				</p>
       </div>

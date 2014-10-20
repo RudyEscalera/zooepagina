@@ -1,0 +1,32 @@
+<h1>Lista rescates</h1>
+
+<div class="table-responsive">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th class = "info">Direccion</th>
+      <th class = "success">Fecha</th>
+      <th colspan="3">Opciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+		<%= link_to 'Registrar Rescate', new_rescate_path, class: "btn btn-info" %>
+	</br>
+</br>
+</br>
+</br>
+    <% @rescates.each do |rescate| %>
+      <tr>
+        <td class = "info"><%= rescate.direccion_rescate %></td>
+        <td class = "success"><%= rescate.fecha %></td>
+        <td><%= link_to 'Mostrar', rescate,class: "btn btn-primary"  %></td>
+        <td><%= link_to 'Editar', edit_rescate_path(rescate),class: "btn btn-warning"  %></td>
+        <td><%= link_to 'Eliminar', rescate, method: :delete, data: { confirm: 'Esta seguro?' },class: "btn btn-danger"  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+

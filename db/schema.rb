@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141009201926) do
+ActiveRecord::Schema.define(version: 20141009234129) do
 
   create_table "adopcions", force: true do |t|
     t.integer  "numero_adultos"
@@ -71,6 +71,15 @@ ActiveRecord::Schema.define(version: 20141009201926) do
     t.date     "fecha_nacimiento"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "rescates", force: true do |t|
+    t.string   "direccion_rescate"
+    t.text     "observacion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.date     "fecha"
+    t.string   "voluntario"
   end
 
   create_table "veterinaria", force: true do |t|

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  direccion_rescate: MyString
+  observacion: MyText
+  fecha: MyString
+
+two:
+  direccion_rescate: MyString
+  observacion: MyText
+  fecha: MyString

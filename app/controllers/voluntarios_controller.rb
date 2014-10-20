@@ -1,4 +1,5 @@
 class VoluntariosController < ApplicationController
+  attr_accessor :id ,:nombre
   before_action :set_voluntario, only: [:show, :edit, :update, :destroy]
 
   # GET /voluntarios
@@ -69,6 +70,6 @@ class VoluntariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def voluntario_params
-      params.require(:voluntario).permit(:nombre, :apellido_paterno, :apellido_materno, :estado, :ci, :fecha_nacimiento, :lugar_nacimiento, :edad, :estado_civil, :direccion, :telefono_fijo, :telefono_movil, :email, :licensia_conducir, :formacion_academica)
+      params.require(:voluntario).permit(:nombre, :apellido_paterno, :apellido_materno, :estado, :ci, :fecha_nacimiento, :lugar_nacimiento, :edad, :estado_civil, :direccion, :telefono_fijo, :telefono_movil, :email, :licensia_conducir, :formacion_academica, :id)
     end
 end
