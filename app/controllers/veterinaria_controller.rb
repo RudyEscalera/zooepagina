@@ -12,7 +12,9 @@ class VeterinariaController < ApplicationController
   # GET /veterinaria
   # GET /veterinaria.json
   def index
-    @veterinaria = Veterinarium.all
+    @palabra = ''
+    @palabra = params[:palabra]
+    @veterinaria= Veterinarium.where("nombre LIKE '#{@palabra}%'")
 
   end
 

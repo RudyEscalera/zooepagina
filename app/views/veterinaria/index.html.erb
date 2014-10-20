@@ -14,6 +14,10 @@
 				<div class="col-md-4">	
 						<%= link_to 'Registrar Veterinaria', new_veterinarium_path, :class=>"btn btn-info"  %>					
 			</div>
+       <%= form_tag({:controller => "veterinaria", :action => "index"}, :method => :get) do %>
+    <%= text_field_tag "searchbox", params[:searchbox], :placeholder => "Buscar", :name => 'palabra' %>
+    <%= submit_tag "Buscar", :name => nil %>
+<% end %>
 		</br>
 	</br>
     <% @veterinaria.each do |veterinarium| %>

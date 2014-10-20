@@ -12,6 +12,10 @@
 
   <tbody>
 		<%= link_to 'Registrar Rescate', new_rescate_path, class: "btn btn-info" %>
+     <%= form_tag({:controller => "rescates", :action => "index"}, :method => :get) do %>
+    <%= text_field_tag "searchbox", params[:searchbox], :placeholder => "Buscar", :name => 'palabra' %>
+    <%= submit_tag "Buscar", :name => nil %>
+<% end %>
 	</br>
 </br>
 </br>

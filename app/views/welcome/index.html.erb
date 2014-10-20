@@ -1,3 +1,7 @@
+<script type="text/javascript">var availableTags = [
+  <%@voluntarios_array%>
+];</script>
+
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -33,9 +37,15 @@
   <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
-  <!-- Autocomplete -->
-<h2 class="demoHeaders">Autocomplete</h2>
-<div>
-  <input id="autocomplete" title="type &quot;a&quot;">
-</div>
+<div class="btn-group">
+  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+    Action <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="/memoria">Memoria</a></li>
+    <li class="divider"></li>
+    <li><a href="/json">Archivos</a></li>
+  </ul>
+  </div>
+  </div>
 </div>

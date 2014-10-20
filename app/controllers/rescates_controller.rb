@@ -4,7 +4,9 @@ class RescatesController < ApplicationController
   # GET /rescates
   # GET /rescates.json
   def index
-    @rescates = Rescate.all
+    @palabra = ''
+    @palabra = params[:palabra]
+    @rescates= Rescate.where("direccion_rescate LIKE '#{@palabra}%'")
   end
 
   # GET /rescates/1
@@ -16,11 +18,12 @@ class RescatesController < ApplicationController
   # GET /rescates/new
   def new
     @rescate = Rescate.new
+    @voluntarios_array = Voluntario.where( estado: "true").pluck(:nombre, :id)
   end
 
   # GET /rescates/1/edit
   def edit
-    @target = Voluntario.find(@rescate.voluntario).nombre
+    @voluntarios_array = Voluntario.where( estado: "true").pluck(:nombre, :id)
   end
 
   # POST /rescates

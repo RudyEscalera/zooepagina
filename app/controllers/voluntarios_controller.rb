@@ -5,7 +5,9 @@ class VoluntariosController < ApplicationController
   # GET /voluntarios
   # GET /voluntarios.json
   def index
-    @voluntarios = Voluntario.all
+     @palabra = ''
+    @palabra = params[:palabra]
+    @voluntarios= Voluntario.where("nombre LIKE '#{@palabra}%'")
   end
 
   # GET /voluntarios/1

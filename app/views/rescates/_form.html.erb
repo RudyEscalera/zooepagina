@@ -24,9 +24,8 @@
     <%= f.date_select  :fecha, start_year:2000, end_year:Time.now.year %>
   </div>
   <div class="field">
-		<% voluntarios_array = Voluntario.all.map { |volum| [volum.nombre, volum.id] } %>
 		<%= f.label :voluntario %><br>
-		<%= f.select :voluntario,options_for_select(voluntarios_array) %>
+		<%= f.select :voluntario,options_for_select(@voluntarios_array) %>
   </div>
   <div class="actions">
 		<%= link_to '<< Atras', rescates_path , class:"btn btn-default" %>
