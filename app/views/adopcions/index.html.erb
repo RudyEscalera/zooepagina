@@ -1,4 +1,11 @@
-<h1>Listing adopcions</h1>
+<h1>Adopciones</h1>
+
+<%= form_tag({:controller => "adopcions", :action => "index"}, :method => :get) do %>
+    <%= text_field_tag "searchbox", params[:searchbox], :placeholder => "Buscar", :name => 'palabra' %>
+    <%= submit_tag "Buscar", :name => nil %>
+<% end %>
+<br>
+<h1><%= @palabra %> &nbsp; </h1>
 
 <table>
   <thead>

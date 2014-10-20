@@ -1,7 +1,7 @@
 <%= form_for(@hogar_temporal) do |f| %>
   <% if @hogar_temporal.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@hogar_temporal.errors.count, "error") %> prohibited this hogar_temporal from being saved:</h2>
+      <h2><%= pluralize(@hogar_temporal.errors.count, "") %> ERRORES PROHIBIDOS:</h2>
 
       <ul>
       <% @hogar_temporal.errors.full_messages.each do |message| %>

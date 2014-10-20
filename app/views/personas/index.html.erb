@@ -1,5 +1,12 @@
 <h1>Personas</h1>
 
+<%= form_tag({:controller => "personas", :action => "index"}, :method => :get) do %>
+    <%= text_field_tag "searchbox", params[:searchbox], :placeholder => "Buscar", :name => 'palabra' %>
+    <%= submit_tag "Buscar", :name => nil %>
+<% end %>
+<br>
+<h1><%= @palabra %> &nbsp; </h1>
+
 <div class="table-responsive">
   <table class="table table-striped" >
     <thead>

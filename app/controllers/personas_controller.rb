@@ -4,7 +4,10 @@ class PersonasController < ApplicationController
   # GET /personas
   # GET /personas.json
   def index
-    @personas = Persona.all
+    # @personas = Persona.all
+    @palabra = ''
+    @palabra = params[:palabra]
+    @personas = Persona.where("ci LIKE '#{@palabra}%'")
   end
 
   # GET /personas/1

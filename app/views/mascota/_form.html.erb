@@ -1,7 +1,7 @@
 <%= form_for(@mascotum, html: {multipart: true}) do |f| %>
   <% if @mascotum.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@mascotum.errors.count, "error") %> prohibited this mascotum from being saved:</h2>
+      <h2><%= pluralize(@mascotum.errors.count, "") %> ERRORES PROHIBIDOS:</h2>
 
       <ul>
       <% @mascotum.errors.full_messages.each do |message| %>

@@ -1,7 +1,7 @@
 <%= form_for(@noticium) do |f| %>
   <% if @noticium.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@noticium.errors.count, "error") %> :</h2>
+      <h2><%= pluralize(@noticium.errors.count, "") %>ERRORES PROHIBIDOS :</h2>
 
       <ul>
       <% @noticium.errors.full_messages.each do |message| %>
