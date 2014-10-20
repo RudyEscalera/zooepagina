@@ -4,7 +4,10 @@ class HogarTemporalsController < ApplicationController
   # GET /hogar_temporals
   # GET /hogar_temporals.json
   def index
-    @hogar_temporals = HogarTemporal.all
+    #@hogar_temporals = HogarTemporal.all
+    @palabra = ''
+    @palabra = params[:palabra]
+    @hogar_temporals= HogarTemporal.where("ci LIKE '#{@palabra}%'")
   end
 
   # GET /hogar_temporals/1
