@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 gem 'tzinfo-data'
 #
+gem 'devise'
 gem 'jquery-ui-rails'
 gem 'rails4-autocomplete'
 # Use jquery as the JavaScript library

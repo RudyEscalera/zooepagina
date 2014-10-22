@@ -17,11 +17,27 @@
             <li><%= link_to 'Registrar Voluntario', new_voluntario_path%></li>
             <li><%= link_to 'Registrar Rescate', new_rescate_path %></li> 
             <li><%= link_to 'Registrar Veterinaria', new_veterinarium_path%>  </li>
+          <% if user_signed_in? %>
+          <% if current_user.admin? %>
+            <li ><%= link_to('Lista de Usuarios', {:controller => :home, :action => :listausuarios})%></li>
+            <li ><%= link_to('Logout', destroy_user_session_path, 
+              :method => :delete) %></li>
+            <%else%>
+            <li><%= link_to('Editar Perfil', edit_user_registration_path) %></li>
+            <li><%= link_to('Logout', destroy_user_session_path, 
+              :method => :delete) %></li>
+            <%end%>
+        <% else %>
+          <li ><%= link_to('Registrarse', new_user_registration_path) %></li>
+          <li ><%= link_to('Login', new_user_session_path)  %></li>
+        <% end %>
           </ul>
-					<p class="navbar-text navbar-right">Usuario Conectado <a href="#" class="navbar-link">Rudy Escalera</a></p>
+					
         </div><!--/.nav-collapse -->
       </div>
     </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 	</br>
 </br>
 </br>
