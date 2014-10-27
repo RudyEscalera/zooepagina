@@ -25,11 +25,16 @@
   <%= @persona.fecha_nacimiento %>
 </p>
 
+<hr>
 <h3>MASCOTAS ADOPTADAS</h3>
 <br>
-<%= link_to '+Registrar Adopcion', new_adopcion_path, :class => 'btn btn-info' %>
+<%= link_to '+Registrar Adopcion', nuevo_adop_path, :class => 'btn btn-info' %>
 <br>
 <br>
+<% @adopciones.each do |adopcion| %>
+  <%= adopcion.id %>
+ 
+<%end%>
 <br>
 
 <%= link_to '<< Atras', personas_path, :class => 'btn btn-default' %>

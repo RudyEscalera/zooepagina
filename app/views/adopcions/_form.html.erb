@@ -12,6 +12,14 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :id_persona %><br>
+    <%= f.number_field :id_persona, :disabled => true, :value => @persona_id %>
+  </div>
+  <div class="field">
+    <%= f.label :id_mascota %><br>
+    <%= f.number_field :id_mascota %>
+  </div>
+  <div class="field">
     <%= f.label :numero_adultos %><br>
     <%= f.number_field :numero_adultos %>
   </div>
