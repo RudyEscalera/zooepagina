@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :personas
 
   resources :adopcions
-  get '/adopcions/new/:id' => 'adopcions#new'
+  # get '/adopcions/new/:id' => 'adopcions#new'
 
   get '/adopcions/new/:id' => 'adopcions#new', as: 'nuevo_adop'
 

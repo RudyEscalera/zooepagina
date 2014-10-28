@@ -21,12 +21,14 @@ class AdopcionsController < ApplicationController
 
   # GET /adopcions/1/edit
   def edit
+    @persona_id = @adopcion.id_persona
   end
 
   # POST /adopcions
   # POST /adopcions.json
   def create
     @adopcion = Adopcion.new(adopcion_params)
+
 
     respond_to do |format|
       if @adopcion.save
@@ -71,6 +73,6 @@ class AdopcionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def adopcion_params
-      params.require(:adopcion).permit(:numero_adultos, :numero_ninios, :numero_perros, :numero_gatos, :numero_otros, :referencia_casa, :numero_referencia1, :numero_referencia2, :id_persona, :id_mascota)
+      params.require(:adopcion).permit( :id_mascota, :numero_adultos, :numero_ninios, :numero_perros, :numero_gatos, :numero_otros, :referencia_casa, :numero_referencia1, :numero_referencia2, :id_persona)
     end
 end

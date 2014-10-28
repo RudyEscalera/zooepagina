@@ -12,8 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :id_persona %><br>
-    <%= f.number_field :id_persona, :disabled => true, :value => @persona_id %>
+    <%= f.hidden_field :id_persona, :value => @persona_id %>
   </div>
   <div class="field">
     <%= f.label :id_mascota %><br>

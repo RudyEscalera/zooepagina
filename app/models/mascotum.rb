@@ -1,4 +1,5 @@
 class Mascotum < ActiveRecord::Base
+	belongs_to :adopcion
 	#attr_accessible :nombre, :nombre, :especie, :raza, :sexo, :edad, :color, :estado, :despar, :hexa, :octa, :anti, :esterilizacion, :observacion
 
 	# validando campos y poniendo un limite en el tamanio de los campos
