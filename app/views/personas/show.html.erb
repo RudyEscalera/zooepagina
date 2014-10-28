@@ -33,20 +33,11 @@
 <br>
 <BR>
 <br>
-NUMERO DE ADOPCIONES:: <%= @adopciones.size %>
-<br>
-<% @adopciones.each do |adopcion| %>
-  ID ADOPCION::<%= adopcion.id %> <BR>
-  # DE ADULTOS::<%= adopcion.numero_adultos %> <BR>
-  # DE ninios::<%= adopcion.numero_ninios %> <BR>
-  # DE PERROS::<%= adopcion.numero_perros %> <BR>
-  # DE GATOS::<%= adopcion.numero_gatos %> <BR>
-  # DE OTROS::<%= adopcion.numero_otros %> <BR>
-  REFERENCIA DE LA CASA::<%= adopcion.referencia_casa %> <BR>
-  NUMERO 1 DE REFERENCIA DE LA CASA::<%= adopcion.numero_referencia1 %> <BR>
-  NUMERO 2 DE REFERENCIA DE LA CASA::<%= adopcion.numero_referencia2 %> <BR>
-  ID MASCOTA::<%= adopcion.id_mascota %> <BR>
+<b>NUMERO DE ADOPCIONES:: <%= @adopciones.size %></b>
+<br><br>
 
+
+<% @adopciones.each do |adopcion| %>
   <h3>MASCOTA</h3>
   <!-- obtengo la mascota -->
   <% @mascotas.each do |mascota| %>
@@ -59,7 +50,18 @@ NUMERO DE ADOPCIONES:: <%= @adopciones.size %>
       COLOR::<%= mascota.color %><BR>
     <%end%>
   <%end%>
+  ID ADOPCION::<%= adopcion.id %> <BR>
+  # DE ADULTOS::<%= adopcion.numero_adultos %> <BR>
+  # DE ninios::<%= adopcion.numero_ninios %> <BR>
+  # DE PERROS::<%= adopcion.numero_perros %> <BR>
+  # DE GATOS::<%= adopcion.numero_gatos %> <BR>
+  # DE OTROS::<%= adopcion.numero_otros %> <BR>
+  REFERENCIA DE LA CASA::<%= adopcion.referencia_casa %> <BR>
+  NUMERO 1 DE REFERENCIA DE LA CASA::<%= adopcion.numero_referencia1 %> <BR>
+  NUMERO 2 DE REFERENCIA DE LA CASA::<%= adopcion.numero_referencia2 %> <BR>
+  ID MASCOTA::<%= adopcion.id_mascota %> <BR>
 
+  <hr>
 <%end%>
 
 <%= link_to '<< Atras', personas_path, :class => 'btn btn-default' %>
