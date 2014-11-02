@@ -19,11 +19,11 @@
             <li><%= link_to 'Registrar Veterinaria', new_veterinarium_path%>  </li>
           <% if user_signed_in? %>
           <% if current_user.admin? %>
-            <li ><%= link_to('Lista de Usuarios', {:controller => :home, :action => :listausuarios})%></li>
+            <li ><%= link_to('Lista de Usuarios', {:controller => :welcome, :action => :listausuarios})%></li>
             <li ><%= link_to('Logout', destroy_user_session_path, 
               :method => :delete) %></li>
             <%else%>
-            <li><%= link_to('Editar Perfil', edit_user_registration_path) %></li>
+            <li><%= link_to('Editar Perfil', edit_user_registration_path) %></li> 
             <li><%= link_to('Logout', destroy_user_session_path, 
               :method => :delete) %></li>
             <%end%>
@@ -51,6 +51,7 @@
           <%= link_to 'Veterinaria', veterinaria_path,:class=>"btn btn-success btn-lg"%>
           <%= link_to 'Voluntario', voluntarios_path, class: "btn btn-success btn-lg" %>
           <%= link_to 'Rescate', rescates_path, class: "btn btn-success btn-lg" %>
+          <%= link_to 'lista usuarios', lista_usuario_path,class: "btn btn-success btn-lg"%>
           <a href="/mascota" class="btn btn-success btn-lg">Mascotas </a>
           <a href="/noticia" class="btn btn-success btn-lg">Noticias</a>
           <a href="/hogar_temporals" class="btn btn-success btn-lg">Hogar Temporal</a>

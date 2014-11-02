@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141022144933) do
+ActiveRecord::Schema.define(version: 20141027134108) do
 
   create_table "adopcions", force: true do |t|
     t.integer  "numero_adultos"
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 20141022144933) do
     t.datetime "updated_at"
     t.boolean  "admin"
     t.string   "name"
+    t.boolean  "estado"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

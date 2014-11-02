@@ -26,7 +26,7 @@
       <tr>
         <td class = "info"><%= rescate.direccion_rescate %></td>
         <td class = "success"><%= rescate.fecha %></td>
-        <td><%= link_to 'Mostrar', rescate,class: "btn btn-primary"  %></td>
+        <td><%= link_to 'Ver', rescate,class: "btn btn-primary"  %></td>
         <td><%= link_to 'Editar', edit_rescate_path(rescate),class: "btn btn-warning"  %></td>
         <td><%= link_to 'Eliminar', rescate, method: :delete, data: { confirm: 'Esta seguro?' },class: "btn btn-danger"  %></td>
       </tr>
