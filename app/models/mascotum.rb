@@ -1,4 +1,7 @@
 class Mascotum < ActiveRecord::Base
+	belongs_to :adopcion
+
+	has_attached_file :photo
 	#attr_accessible :nombre, :nombre, :especie, :raza, :sexo, :edad, :color, :estado, :despar, :hexa, :octa, :anti, :esterilizacion, :observacion
 
 	# validando campos y poniendo un limite en el tamanio de los campos
@@ -17,6 +20,7 @@ class Mascotum < ActiveRecord::Base
 	validates :edad,
     numericality: { only_integer: true, greater_than_or_equal_to:0, message:"Registre solo numero > 0"}
 	
+
 
 	# validates :depar,
 	# format:{ with: /\A[a-zA-Z]+\z/,message: "No use simbolos solo letras" },
@@ -45,38 +49,6 @@ class Mascotum < ActiveRecord::Base
 	# validates :nombre,
 	# uniqueness: {case_sensitive: false ,message: "ya esta registrado"}
 
-	FOTOS = File.join Rails.root, 'public', 'photo_store'
-
-	after_save :guardar_foto
-
-	def photo=(file_data)
-		unless file_data.blank?
-			@file_data = file_data
-			self.extension = file_data.original_filename.split('.').last.downcase
-		end
-	end
-
-	def photo_filename
-		File.join FOTOS, "#{id}.#{extension}"
-	end
-	def photo_path
-		"/photo_store/#{id}.#{extension}"
-	end
-	def has_photo?
-		File.exist? photo_filename
-	end
-
-	private
-
-	def guardar_foto
-		if @file_data
-			FileUtils.mkdir_p FOTOS
-			File.open(photo_filename, "wb") do |f|
-				f.write(@file_data.read)
-			end
-			@file_data = nil 			
-		end		
-	end
 
 	# def imagen=(file_data)	
 	# 	unless file_data.blank?
@@ -84,6 +56,7 @@ class Mascotum < ActiveRecord::Base
 	# 		self.extension = 
 	# 	end
 	# end
+    
 
 	# private
 	# def guardar_imagen

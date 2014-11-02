@@ -1,4 +1,6 @@
 class Persona < ActiveRecord::Base
+	has_many :adopcion
+
 	def self.search(search)
  		if search 
     		where('ci LIKE ?', "%#{search}%")

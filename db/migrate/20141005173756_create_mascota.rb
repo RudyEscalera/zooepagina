@@ -18,6 +18,6 @@ class CreateMascota < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_attachment :mascota, :image
+   
   end
 end

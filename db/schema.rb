@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20141027134108) do
     t.string   "numero_referencia2"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "id_persona"
+    t.integer  "id_mascota"
   end
 
   create_table "hogar_temporals", force: true do |t|

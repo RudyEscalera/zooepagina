@@ -25,9 +25,44 @@
   <%= @persona.fecha_nacimiento %>
 </p>
 
-<h3>REGISTRAR ADOPCION</h3>
-
-<%= link_to '+Registrar Adopcion', new_adopcion_path, :class => 'btn btn-info' %>
+<hr>
+<h3>MASCOTAS ADOPTADAS</h3>
 <br>
+<%= link_to '+Registrar Adopcion', nuevo_adop_path, :class => 'btn btn-info' %>
+
+<br>
+<BR>
+<br>
+<b>NUMERO DE ADOPCIONES:: <%= @adopciones.size %></b>
+<br><br>
+
+
+<% @adopciones.each do |adopcion| %>
+  <h3>MASCOTA</h3>
+  <!-- obtengo la mascota -->
+  <% @mascotas.each do |mascota| %>
+    <% if adopcion.id_mascota == mascota.id %>
+      ID::<%= mascota.id %><BR>
+      NOMBRE::<%= mascota.nombre %><BR>
+      ESPECIE::<%= mascota.especie %><BR>
+      RAZA::<%= mascota.raza %><BR>
+      EDAD MESES:::<%= mascota.edad %><BR>
+      COLOR::<%= mascota.color %><BR>
+    <%end%>
+  <%end%>
+  ID ADOPCION::<%= adopcion.id %> <BR>
+  # DE ADULTOS::<%= adopcion.numero_adultos %> <BR>
+  # DE ninios::<%= adopcion.numero_ninios %> <BR>
+  # DE PERROS::<%= adopcion.numero_perros %> <BR>
+  # DE GATOS::<%= adopcion.numero_gatos %> <BR>
+  # DE OTROS::<%= adopcion.numero_otros %> <BR>
+  REFERENCIA DE LA CASA::<%= adopcion.referencia_casa %> <BR>
+  NUMERO 1 DE REFERENCIA DE LA CASA::<%= adopcion.numero_referencia1 %> <BR>
+  NUMERO 2 DE REFERENCIA DE LA CASA::<%= adopcion.numero_referencia2 %> <BR>
+  ID MASCOTA::<%= adopcion.id_mascota %> <BR>
+
+  <hr>
+<%end%>
+
 <%= link_to '<< Atras', personas_path, :class => 'btn btn-default' %>
 <%= link_to 'Editar', edit_persona_path(@persona), :class => 'btn btn-warning' %> 

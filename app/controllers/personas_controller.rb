@@ -13,6 +13,10 @@ class PersonasController < ApplicationController
   # GET /personas/1
   # GET /personas/1.json
   def show
+    # obteniendo las mascotas adoptadas por esta persona
+    @adopciones = Adopcion.where(:id_persona => params[:id])
+    @mascotas = Mascotum.all()
+    # @mascotas = Mascotum.where(:id_persona => params[:id])
   end
 
   # GET /personas/new
