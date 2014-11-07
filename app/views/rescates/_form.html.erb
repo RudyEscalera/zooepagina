@@ -25,7 +25,7 @@
   </div>
   <div class="field">
 		<%= f.label :voluntario %><br>
-		<%= f.select :voluntario,options_for_select(@voluntarios_array) %>
+		<%= f.select :voluntario,options_for_select(Voluntario.where( estado: "true").pluck(:nombre, :id)) %>
   </div>
   <div class="actions">
 		<%= link_to '<< Atras', rescates_path , class:"btn btn-default" %>

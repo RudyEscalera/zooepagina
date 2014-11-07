@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   resources :mascota
   resources :voluntario_temporals
   resources :veterinaria
+  get "welcome/lista_usuario" => 'welcome#lista_usuario', :as  => 'lista_usuario'
+  get "home/perfil"
 
   get 'welcome/index'
 

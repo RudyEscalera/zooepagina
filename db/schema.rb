@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141028221731) do
+ActiveRecord::Schema.define(version: 20141027134108) do
 
   create_table "adopcions", force: true do |t|
     t.integer  "numero_adultos"
@@ -55,10 +55,6 @@ ActiveRecord::Schema.define(version: 20141028221731) do
     t.text     "observacion"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
   end
 
   create_table "noticia", force: true do |t|
@@ -103,6 +99,7 @@ ActiveRecord::Schema.define(version: 20141028221731) do
     t.datetime "updated_at"
     t.boolean  "admin"
     t.string   "name"
+    t.boolean  "estado"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

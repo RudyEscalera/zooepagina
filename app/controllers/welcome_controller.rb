@@ -1,5 +1,15 @@
 class WelcomeController < ApplicationController
   def index
-  	@voluntarios_array = Voluntario.where( estado: "true").pluck(:nombre, :id)
+  end
+
+  def lista_usuario
+  	@palabra = ''
+    @palabra = params[:palabra]
+    @usuarios = User.where("email LIKE '#{@palabra}%'")	
+  end
+
+  def perfil
+  	@encargado = User.find(params[:id])
+  	render 'perfil'
   end
 end

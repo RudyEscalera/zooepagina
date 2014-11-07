@@ -1,0 +1,35 @@
+<h1>Lista Encargados</h1>
+<div class="table-responsive">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th class = "info">Correo</th>
+      <th class = "success">nombre</th>
+       <th></th>
+        <th>Opciones</th>
+	    <th></th>
+    </tr>
+  </thead>
+  <tbody>
+			<div class="col-md-4">	
+						<%= link_to 'Registrar Encargado', new_user_registration_path, :class=>"btn btn-info"  %>					
+			</div>
+       <%= form_tag({:controller => "welcome", :action => "lista_usuario"}, :method => :get) do %>
+       <%= text_field_tag "searchbox", params[:searchbox], :placeholder => "Buscar", :name => 'palabra' %>
+       <%= submit_tag "Buscar", :name => nil %>
+<% end %>
+		</br>
+	</br>
+    <% @usuarios.each do |usuario| %>
+      <tr>
+        <td class = "info"><%= usuario.email%></td>
+        <td class = "success"><%= usuario.name %></td>	
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+

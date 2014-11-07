@@ -1,4 +1,4 @@
-<h1>Lita voluntarios</h1>
+<h1>Lista voluntarios</h1>
 
 <div class="table-responsive">
 <table class="table table-striped">
@@ -12,12 +12,12 @@
 
   <tbody>
 				<div class="col-md-4">	
-								<%= link_to 'Registrar Voluntario', new_voluntario_path, class: "btn btn-info"%>				
+								<%= link_to 'Registrar Encargado', new_user_registration_path, class: "btn btn-info"%>				
 				</div>
         <%= form_tag({:controller => "voluntarios", :action => "index"}, :method => :get) do %>
         <%= text_field_tag "searchbox", params[:searchbox], :placeholder => "Buscar", :name => 'palabra' %>
-       <%= submit_tag "Buscar", :name => nil %>
-<% end %>
+        <%= submit_tag "Buscar", :name => nil %>
+        <% end %>
 			</br>
 			</br>
 		</br>
