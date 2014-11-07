@@ -1,13 +1,32 @@
+<center><h1>Ver Adopcion</h1></center>
+<br>
+<br>
+<br>
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>ID PERSONA:</strong>
-  <%= @adopcion.id_persona %>
+  <%= @adopcion.id_persona %><BR>
+  <% @personas.each do |persona|%>
+    <% if @adopcion.id_persona == persona.id %>
+      <strong>CI</strong> <%= persona.ci %><br>
+      <strong>NOMBRES</strong> <%= persona.nombres %> <br>
+    <%end%>
+  <%end%> 
 </p>
+<hr>
 <p>
   <strong>ID MASCOTA:</strong>
-  <%= @adopcion.id_mascota %>
+  <%= @adopcion.id_mascota %> <br>
+  <% @mascotas.each do |mascota|%>
+    <% if @adopcion.id_mascota == mascota.id %>
+      <strong>NOMBRE</strong> <%= mascota.nombre %><br>
+      <strong>ESPECIE</strong> <%= mascota.especie %> <br>
+      <strong>RAZA</strong> <%= mascota.raza %> <br>
+    <%end%>
+  <%end%>
 </p>
+<hr>
 <p>
   <strong>Numero adultos:</strong>
   <%= @adopcion.numero_adultos %>

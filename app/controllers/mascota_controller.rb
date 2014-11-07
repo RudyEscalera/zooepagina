@@ -6,11 +6,19 @@ class MascotaController < ApplicationController
   # GET /mascota
   # GET /mascota.json
   def index
-    # @mascota = Mascotum.all
+    @mascotas = Mascotum.all
 
     @palabra = ''
     @palabra = params[:palabra]
     @mascota = Mascotum.where("nombre LIKE '#{@palabra}%'")
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = MascotasPdf.new(@mascotas)
+        send_data pdf.render, filename: "mascotas.pdf", type: "application/pdf", disposition: "inline"
+      end
+    end
 
   end
 
@@ -18,6 +26,8 @@ class MascotaController < ApplicationController
   # GET /mascota/1.json
   def show
   end
+
+ 
 
   # GET /mascota/new
   def new

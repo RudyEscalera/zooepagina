@@ -9,10 +9,11 @@
 <% end %>
 <!-- Icono de imprimir reportes -->
 <p align="right">
-  <a href="" title="" class="btn btn-default">  
+  <a href="/mascota.pdf" title="" class="btn btn-default">  
     <img src="/assets/impresora.png"  style="width:48px;height:48px" >
   </a>
   Imprimir Lista de Mascotas
+
 </p>
 
 <br>
@@ -27,11 +28,12 @@
     <thead>
       <tr>
         <!-- <th>Image</th> -->
+        <th>ID</th>
         <th>Nombre</th>
         <th>Especie</th>
         <th>Raza</th>
         <th>Sexo</th>
-        <th>Edad</th>
+        <th>Edad Meses</th>
         <!-- <th>Color</th> -->
         <th>Estado</th>
         <!-- <th>Depar</th> -->
@@ -47,6 +49,7 @@
     <tbody>
       <% @mascota.each do |mascotum| %>
         <tr>
+          <td><%= mascotum.id %></td>
           <td><%= mascotum.nombre %></td>
           <td><%= mascotum.especie %></td>
           <td><%= mascotum.raza %></td>

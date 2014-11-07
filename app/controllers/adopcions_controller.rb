@@ -4,12 +4,21 @@ class AdopcionsController < ApplicationController
   # GET /adopcions
   # GET /adopcions.json
   def index
+
+    # @palabra = ''
+    # @palabra = params[:palabra]
+    # @adopcions = Adopcion.where("nombre LIKE '#{@palabra}%'")
+
     @adopcions = Adopcion.all
+    @mascotas = Mascotum.all
+    @personas = Persona.all
   end
 
   # GET /adopcions/1
   # GET /adopcions/1.json
   def show
+    @mascotas = Mascotum.all
+    @personas = Persona.all
   end
 
   # GET /adopcions/new

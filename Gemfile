@@ -43,3 +43,6 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
+gem 'prawn'
+gem 'prawn-table'
