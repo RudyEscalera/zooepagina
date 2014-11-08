@@ -12,7 +12,7 @@
 
   <tbody>
 				<div class="col-md-4">	
-								<%= link_to 'Registrar Encargado', new_user_registration_path, class: "btn btn-info"%>				
+								<%= link_to 'Registrar Voluntario', new_voluntario_path, class: "btn btn-info"%>				
 				</div>
         <%= form_tag({:controller => "voluntarios", :action => "index"}, :method => :get) do %>
         <%= text_field_tag "searchbox", params[:searchbox], :placeholder => "Buscar", :name => 'palabra' %>

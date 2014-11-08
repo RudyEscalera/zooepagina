@@ -18,6 +18,7 @@
 	width: 800px;
 	left: 30%;
 	top: 1%;
+	background-color: red;
 }
 
 .contenido{
@@ -42,11 +43,6 @@ th,table{
 .edit{
 	position: relative;
 	left: 12px;
-}
-.contenido2{
-border: 1px solid #cccccc;
-	background: #f9f9f9 url(images/ui-bg_highlight-hard_100_f9f9f9_1x100.png) 50% top repeat-x;
-	color: #222222;
 }
 .boton {
 	border: 1px solid #f5f5f5;
@@ -105,3 +101,9 @@ body{
 	display: inline;
 margin-top: 10px;
 }
+.formulario div{
+	float: left;
+	width: 150px;
+	margin-bottom: 4px;
+}
+
