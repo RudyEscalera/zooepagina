@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :seguimientos
+
   devise_for :users
   resources :personas
 
@@ -7,6 +9,7 @@ Rails.application.routes.draw do
   # get '/adopcions/new/:id' => 'adopcions#new'
 
   get '/adopcions/new/:id' => 'adopcions#new', as: 'nuevo_adop'
+  get '/seguimientos/new/:id' => 'seguimientos#new', as: 'nuevo_seguimiento'
 
   resources :rescates
 

@@ -67,5 +67,28 @@
   <%= @adopcion.numero_referencia2 %>
 </p>
 
-<%= link_to 'Editar', edit_adopcion_path(@adopcion) %> |
-<%= link_to '<< Atras', adopcions_path %>
+<%= link_to 'Registrar Seguimiento', nuevo_seguimiento_path, :class => 'btn btn-primary' %>
+
+
+<%= link_to '<< Atras', adopcions_path, :class => 'btn btn-default' %>
+<%= link_to 'Editar', edit_adopcion_path(@adopcion), :class => 'btn btn-warning' %> 
+
+<!-- PARTE DE SEGUIMIENTOS -->
+<p>Id :: <%= @id_adopcion%> </p>
+<p>Seguimientos :: <%= @seguimientos.size%> </p>
+
+<div id="seguimientos" align="left">
+  <hr>
+  <h2>Seguimientos</h2>
+  <%@seguimientos.each do |seguimiento|%>
+    Fecha::<%= seguimiento.created_at %>
+    <br>
+    <%= seguimiento.observacion %>
+    <br>
+    <div align="right">
+      <%= link_to 'Editar', edit_seguimiento_path(seguimiento) %>
+      <%= link_to 'Eliminar', seguimiento, method: :delete, data: { confirm: 'Esta seguro?' } %>
+    </div>
+    <hr>
+  <%end%>
+</div>

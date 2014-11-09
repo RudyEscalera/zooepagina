@@ -17,8 +17,10 @@ class AdopcionsController < ApplicationController
   # GET /adopcions/1
   # GET /adopcions/1.json
   def show
+    @id_adopcion = params[:id]
     @mascotas = Mascotum.all
     @personas = Persona.all
+    @seguimientos = Seguimiento.where(:id_adopcion => params[:id])
   end
 
   # GET /adopcions/new

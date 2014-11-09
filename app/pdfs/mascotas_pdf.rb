@@ -25,38 +25,42 @@ class MascotasPdf < Prawn::Document
   end
 
   def datos
-    
+    fecha = Time.now
+
     move_down 10
     font("Courier",:size=>10)do
-      text "Yeah, using Courier 10 courtesy of the font method."
+      text "ZOOE CBBA-Bolivia\nFecha: #{fecha.day}/#{fecha.month}/#{fecha.year}", :align => :right
+
+      text "\n\nDocumento de reporte de mascotas perteneciente a la organizacion ZOOE. Encargada de rescate y concientizacion de mascotas."
     end
 
     font("Helvetica",:size=>12)
-    text "Back to normal"
+    text "\nMASCOTAS"
 
     move_down 20
-    mascotainfo = [["NOMBRE","ESPECIE","RAZA","SEXO","EDAD-MESES","COLOR"]]
+    mascotainfo = [["N#","I.D","NOMBRE","ESPECIE","RAZA","SEXO","EDAD-MESES","COLOR"]]
     table mascotainfo, 
     # :position => :center,
-    :column_widths => [70,70,70,70,70,70,70]     
+    :column_widths => [30,30,70,70,70,70,70,70,70]     
 
 
-
+    contador = 1
     @mascotas.each do |mascota|
-      filas(mascota)
+      filas(mascota,contador)
+      contador += 1
     end
   end
 
-  def filas(mascota)
-    move_down 5
+  def filas(mascota,contador)
+    move_down 3
     font("Courier",:size=>10)
     # font_size 10 #TAMANIO DE LAS LETRAS
 
-    mascotainfo = [["#{ mascota.nombre }","#{ mascota.especie }","#{ mascota.raza }","#{mascota.sexo}","#{mascota.edad}","#{mascota.color}"]]
+    mascotainfo = [["#{contador}","#{mascota.id}","#{ mascota.nombre }","#{ mascota.especie }","#{ mascota.raza }","#{mascota.sexo}","#{mascota.edad}","#{mascota.color}"]]
 
     table mascotainfo, 
     # :position => :center,
-    :column_widths => [70,70,70,70,70,70] 
+    :column_widths => [30,30,70,70,70,70,70,70] 
   end
 end
 

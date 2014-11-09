@@ -5,8 +5,9 @@
     <%= submit_tag "Buscar", :name => nil %>
 <% end %>
 <br>
-<%= @mascotas.size %>
-<%= @personas.size %>
+
+<%= link_to 'Ver Personas', personas_path, :class => "btn btn-info" %>
+
 <br>
 <h1><%= @palabra %> &nbsp; </h1>
 <div class="table-responsive">
@@ -44,9 +45,9 @@
           <%end%>     
           <td><%= adopcion.referencia_casa %></td>
           <td><%= adopcion.numero_referencia1 %></td>
-          <td><%= link_to 'Ver', adopcion %></td>
-          <td><%= link_to 'Editar', edit_adopcion_path(adopcion) %></td>
-          <td><%= link_to 'Eliminar', adopcion, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+          <td><%= link_to 'Ver', adopcion, :class => 'btn btn-primary' %></td>
+          <td><%= link_to 'Editar', edit_adopcion_path(adopcion), :class => 'btn btn-warning' %></td>
+          <td><%= link_to 'Eliminar', adopcion, method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-danger' %></td>
         </tr>
       <% end %>
     </tbody>
@@ -54,5 +55,4 @@
 </div>
 <br>
 
-<%= link_to 'Registrar Adopcion', new_adopcion_path %>
-<%= link_to 'Personas', personas_path %>
+

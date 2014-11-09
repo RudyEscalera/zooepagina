@@ -1,0 +1,24 @@
+<%= form_for(@seguimiento) do |f| %>
+  <% if @seguimiento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@seguimiento.errors.count, "error") %> Error</h2>
+
+      <ul>
+      <% @seguimiento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :id_adopcion, :value => @id_adopcion %>
+  </div>
+  <div class="field">
+    <%= f.label :observacion %><br>
+    <%= f.text_area :observacion %>
+  </div>
+  <div class="actions">
+    <%= f.submit :Guardar, :class => 'btn btn-success' %>
+  </div>
+<% end %>
