@@ -14,4 +14,7 @@ class HogarTemporal < ActiveRecord::Base
 	validates :direccion, 
 	presence:{ message:": Introduzca su direccion" }, 
 	length: { maximum: 50 }
+
+	validates :ci,
+	uniqueness: {case_sensitive: false ,message: "ya esta registrado"}
 end

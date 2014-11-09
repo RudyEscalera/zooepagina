@@ -4,7 +4,7 @@
 
 
 <%= form_tag({:controller => "mascota", :action => "index"}, :method => :get) do %>
-    <%= text_field_tag "searchbox", params[:searchbox], :placeholder => "Buscar", :name => 'palabra' %>
+    <%= text_field_tag "searchbox", params[:searchbox], :placeholder => "Buscar/nombre", :name => 'palabra' %>
     <%= submit_tag "Buscar", :name => nil %>
 <% end %>
 <!-- Icono de imprimir reportes -->

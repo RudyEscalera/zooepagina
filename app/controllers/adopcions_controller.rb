@@ -5,9 +5,10 @@ class AdopcionsController < ApplicationController
   # GET /adopcions.json
   def index
 
-    # @palabra = ''
-    # @palabra = params[:palabra]
-    # @adopcions = Adopcion.where("nombre LIKE '#{@palabra}%'")
+    @palabra = ''
+    @palabra = params[:palabra]
+    @id_persona = Persona.where(:ci => @palabra)
+    @adopcions = Adopcion.where("id_persona LIKE '#{@id_persona}%'")
 
     @adopcions = Adopcion.all
     @mascotas = Mascotum.all

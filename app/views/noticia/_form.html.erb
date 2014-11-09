@@ -12,15 +12,15 @@
   <% end %>
 
   <div class="field col-md-5">
-    <%= f.label :titulo %><br>
+    <%= f.label :titulo %>*
     <%= f.text_field :titulo, :class => "form-control input" %>
   </div>
   <div class="field col-md-4">
-    <%= f.label :categoria %><br>
+    <%= f.label :categoria %>
     <%= f.select(:categoria,options_for_select([['Evento', "evento"], ['Noticia',"noticia"]], 2)) %>
   </div>
   <div class="field col-md-5">
-    <%= f.label :contenido %><br>
+    <%= f.label :contenido %>*
     <%= f.text_area :contenido, :class => "form-control input", size: "20x10" %>
   </div>
   <div class="actions">

@@ -1,7 +1,7 @@
 <center><h1>Hogares Temporales</h1></center>
 
 <%= form_tag({:controller => "hogar_temporals", :action => "index"}, :method => :get) do %>
-    <%= text_field_tag "searchbox", params[:searchbox], :placeholder => "Buscar", :name => 'palabra' %>
+    <%= text_field_tag "searchbox", params[:searchbox], :placeholder => "Buscar/ci", :name => 'palabra' %>
     <%= submit_tag "Buscar", :name => nil %>
 <% end %>
 <br>

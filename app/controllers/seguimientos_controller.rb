@@ -43,7 +43,7 @@ class SeguimientosController < ApplicationController
   def update
     respond_to do |format|
       if @seguimiento.update(seguimiento_params)
-        format.html { redirect_to @seguimiento, notice: 'Seguimiento was successfully updated.' }
+        format.html { redirect_to '/adopcions', notice: 'Seguimiento Editado.' }
         format.json { render :show, status: :ok, location: @seguimiento }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class SeguimientosController < ApplicationController
   def destroy
     @seguimiento.destroy
     respond_to do |format|
-      format.html { redirect_to seguimientos_url, notice: 'Seguimiento Eliminado.' }
+      format.html { redirect_to '/adopcions', notice: 'Seguimiento Eliminado.' }
       format.json { head :no_content }
     end
   end

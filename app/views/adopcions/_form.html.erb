@@ -15,39 +15,39 @@
     <%= f.hidden_field :id_persona, :value => @persona_id %>
   </div>
   <div class="field">
-    <%= f.label :id_mascota %><br>
-    <%= f.number_field :id_mascota %>
+    <%= f.label :id_mascota %>*
+    <%= f.number_field :id_mascota, :required => true %>
   </div>
   <div class="field">
-    <%= f.label :numero_adultos %><br>
-    <%= f.number_field :numero_adultos %>
+    <%= f.label :numero_adultos %>*
+    <%= f.number_field :numero_adultos, :required => true %>
   </div>
   <div class="field">
-    <%= f.label :numero_ninios %><br>
-    <%= f.number_field :numero_ninios %>
+    <%= f.label :numero_ninios %>*
+    <%= f.number_field :numero_ninios, :required => true %>
   </div>
   <div class="field">
-    <%= f.label :numero_perros %><br>
+    <%= f.label :numero_perros %>
     <%= f.number_field :numero_perros %>
   </div>
   <div class="field">
-    <%= f.label :numero_gatos %><br>
+    <%= f.label :numero_gatos %>
     <%= f.number_field :numero_gatos %>
   </div>
   <div class="field">
-    <%= f.label :numero_otros %><br>
+    <%= f.label :numero_otros %>
     <%= f.number_field :numero_otros %>
   </div>
   <div class="field">
-    <%= f.label :referencia_casa %><br>
+    <%= f.label :referencia_casa %>
     <%= f.select(:referencia_casa,options_for_select([['Propia', "propia"], ['Alquiler',"alquiler"], ['Antricredito',"antricredito"]], 3)) %>
   </div>
   <div class="field">
-    <%= f.label :numero_referencia1 %><br>
-    <%= f.text_field :numero_referencia1 %>
+    <%= f.label :numero_referencia1 %>*
+    <%= f.text_field :numero_referencia1, :required => true %>
   </div>
   <div class="field">
-    <%= f.label :numero_referencia2 %><br>
+    <%= f.label :numero_referencia2 %>
     <%= f.text_field :numero_referencia2 %>
   </div>
   <div class="actions">
