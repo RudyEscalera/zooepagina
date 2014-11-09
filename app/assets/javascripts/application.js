@@ -10,12 +10,11 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require bootstrap
 //= require jquery
 //= require jquery_ujs
 //= jquery-1.11.0
+//= jquery-ui
 //= require_tree .
-$( "#autocomplete" ).autocomplete({
-	source: availableTags
-});
-$('.dropdown-toggle').dropdown();
+
 

@@ -6,12 +6,10 @@ class Voluntario < ActiveRecord::Base
             #format:{ with: /\A[a-zA-Z]+\z/, message: "solo se permiten letras",:allow_blank => TRUE }
   validates :apellido_paterno,
             presence:{ message:": es necesario el apellido" },
-            length:{minimum:2, maximum:20 ,message:"tiene que ser mayor a 1 letra y menor a 20",:allow_blank => TRUE},
-            format:{ with: /\A[a-zA-Z]+\z/,message: "solo se permiten letras",:allow_blank => TRUE }
+            length:{minimum:2, maximum:20 ,message:"tiene que ser mayor a 1 letra y menor a 20",:allow_blank => TRUE}
   validates :apellido_materno,
             presence:{ message:": es necesario el apellido" },
-            length:{minimum:2, maximum:20 ,message:"tiene que ser mayor a 1 letra y menor a 20",:allow_blank => TRUE},
-            format:{ with: /\A[a-zA-Z]+\z/,message: "solo se permiten letras",:allow_blank => TRUE }
+            length:{minimum:2, maximum:20 ,message:"tiene que ser mayor a 1 letra y menor a 20",:allow_blank => TRUE}
   validates :ci,
             uniqueness: {message: "el ci ya fue usado"},
             presence:{ message:": es necesario un CI" , :allow_blank => TRUE},

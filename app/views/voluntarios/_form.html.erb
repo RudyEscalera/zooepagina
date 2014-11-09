@@ -10,62 +10,39 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label :ci %><br>
-    *<%= f.number_field :ci ,placeholder:"ci"%>
+  <div style="float:left;width: 52%">
+    <div style="width:150px;float:left; text-align:left"><%= f.label :ci%>*</div>
+    <div style="width:70px;float:left; margin-bottom:4px"><%= f.number_field :ci ,placeholder:"ci"%></div><br><div style="clear:both"></div>
+    <div style="width:150px;float:left; text-align:left"><%= f.label :nombre %>*</div>
+    <div style="width:70px;float:left; margin-bottom:4px"><%= f.text_field :nombre ,placeholder:"nombre"%></div><br><div style="clear:both"></div>
+    <div style="width:150px;float:left; text-align:left"><%= f.label :apellido_paterno %>*</div>
+   <div style="width:70px;float:left; margin-bottom:4px"><%= f.text_field :apellido_paterno,placeholder:"Apelido Paterno" %></div><br><div style="clear:both"></div>
+    <div style="width:150px;float:left; text-align:left"><%= f.label :apellido_materno %>*</div>
+    <div style="width:70px;float:left; margin-bottom:4px"><%= f.text_field :apellido_materno,placeholder:"Apelido Materno" %></div><br><div style="clear:both"></div>
+    <div style="width:150px;float:left; text-align:left"><%= f.label :estado %></div>
+    <div style="width:70px;float:left; margin-bottom:4px"><%= f.select(:estado,options_for_select([['Activo', true], ['No activo',false]], 2))%></div><br><div style="clear:both"></div>
+    <div style="width:120px;float:left; text-align:left"><%= f.label :fecha_nacimiento %></div>
+    <div style="width:240px;float:left; margin-bottom:4px"><%= f.date_select :fecha_nacimiento, start_year:1900, end_year:Time.now.year%></div><br><div style="clear:both"></div><div style="clear:both"></div>
+    <div style="width:150px;float:left; text-align:left"><%= f.label :lugar_nacimiento %></div>
+    <div style="width:70px;float:left; margin-bottom:4px"><%= f.text_field :lugar_nacimiento ,placeholder:"Lugar Nacimiento"%></div><br><div style="clear:both"></div>
   </div>
-  <div class="field">
-    <%= f.label :nombre %><br>
-    *<%= f.text_field :nombre ,placeholder:"nombre"%>
+  <div style="float:right; width: 45%">
+    <div style="width:150px;float:left; text-align:left"><%= f.label :estado_civil %></div>
+    <div style="width:150px;float:left; text-align:center"><%= f.select(:estado_civil,options_for_select([['Casado', "casado"], ['Soltero',"soltero"]], 2))%></div><br><div style="clear:both"></div>
+    <div style="width:150px;float:left; text-align:left"><%= f.label :direccion %>*</div>
+    <div style="width:70px;float:left; margin-bottom:4px"><%= f.text_field :direccion,placeholder:"Direccion" %></div><br><div style="clear:both"></div>
+    <div style="width:150px;float:left; text-align:left"><%= f.label :telefono_fijo %></div>
+    <div style="width:70px;float:left; margin-bottom:4px"><%= f.number_field :telefono_fijo,placeholder:"Telefono Fijo" %></div><br><div style="clear:both"></div>
+    <div style="width:150px;float:left; text-align:left"><%= f.label :telefono_movil %></div>
+    <div style="width:70px;float:left; margin-bottom:4px"><%= f.number_field :telefono_movil,placeholder:"Telefono Movil" %></div><br><div style="clear:both"></div>
+    <div style="width:150px;float:left; text-align:left"><%= f.label :Correo %></div>
+    <div style="width:70px;float:left; margin-bottom:4px"><%= f.text_field :email,placeholder:" Correo" %></div><br><div style="clear:both"></div>
+    <div style="width:150px;float:left; text-align:left"><%= f.label :licensia_conducir %></div>
+    <div style="width:70px;float:left; margin-bottom:4px"><%= f.number_field :licensia_conducir,placeholder:"Licensia de conducir" %></div><br><div style="clear:both"></div>
+    <div style="width:150px;float:left; text-align:left"><%= f.label :formacion_academica %></div>
+    <div style="width:70px;float:left; margin-bottom:4px"><%= f.text_area :formacion_academica,placeholder:"Formacion Academica",:maxlength =>"10" %></div><br><div style="clear:both"></div>
   </div>
-  <div class="field">
-    <%= f.label :apellido_paterno %><br>
-    *<%= f.text_field :apellido_paterno,placeholder:"Apelido Paterno" %>
-  </div>
-  <div class="field">
-    <%= f.label :apellido_materno %><br>
-    *<%= f.text_field :apellido_materno,placeholder:"Apelido Materno" %>
-  </div>
-  <div class="field">
-    <%= f.label :estado %><br>
-    <%= f.select(:estado,options_for_select([['Activo', true], ['No activo',false]], 2))%>
-  </div>
-  <div class="field">
-    <%= f.label :fecha_nacimiento %><br>
-    <%= f.date_select :fecha_nacimiento, start_year:1900, end_year:Time.now.year%>
-  </div>
-  <div class="field">
-    <%= f.label :lugar_nacimiento %><br>
-    <%= f.text_field :lugar_nacimiento ,placeholder:"Lugar Nacimiento"%>
-  </div>
-  <div class="field">
-    <%= f.label :estado_civil %><br>
-    <%= f.select(:estado_civil,options_for_select([['Casado', "casado"], ['Soltero',"soltero"]], 2))%>
-  </div>
-  <div class="field">
-    <%= f.label :direccion %><br>
-    *<%= f.text_field :direccion,placeholder:"Direccion" %>
-  </div>
-  <div class="field">
-    <%= f.label :telefono_fijo %><br>
-    <%= f.number_field :telefono_fijo,placeholder:"Telefono Fijo" %>
-  </div>
-  <div class="field">
-    <%= f.label :telefono_movil %><br>
-    <%= f.number_field :telefono_movil,placeholder:"Telefono Movil" %>
-  </div>
-  <div class="field">
-    <%= f.label :Correo %><br>
-    <%= f.text_field :email,placeholder:" Correo" %>
-  </div>
-  <div class="field">
-    <%= f.label :licensia_conducir %><br>
-    <%= f.number_field :licensia_conducir,placeholder:"Licensia de conducir" %>
-  </div>
-  <div class="field">
-    <%= f.label :formacion_academica %><br>
-    <%= f.text_area :formacion_academica,placeholder:"Formacion Academica" %>
-  </div>
+  <div style="clear:both"></div>
   <div class="actions">
 		<%= link_to 'Atras', voluntarios_path , class:"btn btn-danger"%>
     <%= f.submit :guardar, class: "btn btn-success" %>
