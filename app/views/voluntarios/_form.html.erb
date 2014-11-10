@@ -31,7 +31,7 @@
     <div style="width:150px;float:left; text-align:center"><%= f.select(:estado_civil,options_for_select([['Casado', "casado"], ['Soltero',"soltero"]], 2))%></div><br><div style="clear:both"></div>
     <div style="width:150px;float:left; text-align:left"><%= f.label :direccion %>*</div>
     <div style="width:70px;float:left; margin-bottom:4px"><%= f.text_field :direccion,placeholder:"Direccion" %></div><br><div style="clear:both"></div>
-    <div style="width:150px;float:left; text-align:left"><%= f.label :telefono_fijo %></div>
+    <div style="width:150px;float:left; text-align:left"><%= f.label :telefono_fijo %>*</div>
     <div style="width:70px;float:left; margin-bottom:4px"><%= f.number_field :telefono_fijo,placeholder:"Telefono Fijo" %></div><br><div style="clear:both"></div>
     <div style="width:150px;float:left; text-align:left"><%= f.label :telefono_movil %></div>
     <div style="width:70px;float:left; margin-bottom:4px"><%= f.number_field :telefono_movil,placeholder:"Telefono Movil" %></div><br><div style="clear:both"></div>
@@ -40,7 +40,7 @@
     <div style="width:150px;float:left; text-align:left"><%= f.label :licensia_conducir %></div>
     <div style="width:70px;float:left; margin-bottom:4px"><%= f.number_field :licensia_conducir,placeholder:"Licensia de conducir" %></div><br><div style="clear:both"></div>
     <div style="width:150px;float:left; text-align:left"><%= f.label :formacion_academica %></div>
-    <div style="width:70px;float:left; margin-bottom:4px"><%= f.text_area :formacion_academica,placeholder:"Formacion Academica",:maxlength =>"10" %></div><br><div style="clear:both"></div>
+    <div style="width:70px;float:left; margin-bottom:4px"><%= f.text_area :formacion_academica,placeholder:"Formacion Academica",:maxlength =>"50" %></div><br><div style="clear:both"></div>
   </div>
   <div style="clear:both"></div>
   <div class="actions">

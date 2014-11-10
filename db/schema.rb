@@ -53,12 +53,9 @@ ActiveRecord::Schema.define(version: 20141108201525) do
     t.string   "anti"
     t.string   "esterilizacion"
     t.text     "observacion"
+    t.string   "extension"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
   end
 
   create_table "noticia", force: true do |t|

@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :observacion %><br>
-    <%= f.text_area :observacion, onKeyDown: "checkLength(this,10)" %>
+    <%= f.text_area :observacion, :maxlength =>"50"%>
   </div>
   <div class="field">
     <%= f.label :fecha %><br>
