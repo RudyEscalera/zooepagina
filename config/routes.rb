@@ -26,8 +26,10 @@ Rails.application.routes.draw do
   resources :voluntario_temporals
   resources :veterinaria
   get "welcome/lista_usuario" => 'welcome#lista_usuario', :as  => 'lista_usuario'
-  get "home/perfil"
-
+  get "welcome/perfil"
+  get "welcome/lista_usuarios/eliminar" => "welcome#eliminar"
+  get "welcome/lista_usuarios/habilitarlo" => "welcome#habilitarlo"
+  get "welcome/lista_usuarios/desactivarlo" => "welcome#desactivarlo"
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

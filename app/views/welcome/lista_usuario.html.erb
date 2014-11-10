@@ -1,19 +1,16 @@
+<% if current_user.admin? %>
 <h1>Lista Encargados</h1>
 <div class="table-responsive">
 <table class="table table-striped">
   <thead>
     <tr>
       <th class = "info">Correo</th>
-      <th class = "success">nombre</th>
        <th></th>
         <th>Opciones</th>
 	    <th></th>
     </tr>
   </thead>
   <tbody>
-			<div class="col-md-4">	
-						<%= link_to 'Registrar Encargado', new_user_registration_path, :class=>"btn btn-info"  %>					
-			</div>
        <%= form_tag({:controller => "welcome", :action => "lista_usuario"}, :method => :get) do %>
        <%= text_field_tag "searchbox", params[:searchbox], :placeholder => "Buscar", :name => 'palabra' %>
        <%= submit_tag "Buscar", :name => nil %>
@@ -23,13 +20,23 @@
     <% @usuarios.each do |usuario| %>
       <tr>
         <td class = "info"><%= usuario.email%></td>
-        <td class = "success"><%= usuario.name %></td>	
-      </tr>
+        <td><%= link_to 'Mostrar', :controller => :welcome ,:action => :perfil, :id => usuario.id %></td>
+        <% if usuario.estado ==nil %>
+            <td class = "success">
+              <%= link_to 'Habilitarlo', :controller => :welcome ,:action => :habilitarlo, :id => usuario.id %>
+            </td>
+            <% else %>
+            <td class = "success">
+              <%= link_to 'Descativarlo', :controller => :welcome ,:action => :desactivarlo, :id => usuario.id %>
+            </td>
+       <% end %>
+       <td><%= link_to 'Eliminar',:controller => :welcome, :action => :eliminar, :id => usuario.id %></td>
+       </tr>
     <% end %>
   </tbody>
 </table>
 </div>
-
+<% end -%>
 <br>
 
 

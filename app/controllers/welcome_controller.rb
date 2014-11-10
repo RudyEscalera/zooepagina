@@ -9,7 +9,31 @@ class WelcomeController < ApplicationController
   end
 
   def perfil
-  	@encargado = User.find(params[:id])
-  	render 'perfil'
+        @usuario = User.find(params[:id])
+        render 'perfil'
   end
+
+  def eliminar
+    user=User.find(params[:id])
+    user.destroy
+    @usuarios = User.all
+    render 'lista_usuario'
+  end
+
+  def habilitarlo
+    usuario = User.find(params[:id])
+    usuario.estado = true
+    usuario.save
+    @usuarios = User.where("email LIKE '#{@palabra}%'") 
+    render 'lista_usuario'
+  end
+
+  def desactivarlo
+    usuario = User.find(params[:id])
+    usuario.estado = nil
+    usuario.save
+    @usuarios = User.where("email LIKE '#{@palabra}%'") 
+    render 'lista_usuario'
+  end
+  private
 end

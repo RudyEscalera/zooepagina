@@ -24,6 +24,7 @@ class Voluntario < ActiveRecord::Base
             presence:{ message:": es necesario una direccion" },
             format:{ with:/\A[a-zA-Z0-9]+\s/,message: "No se permiten caracteres tambien que sean 2 calles minimo",:allow_blank => TRUE }
   validates :telefono_fijo,
+            presence:{ message:": es necesario un telefono fijo" },
             numericality: { only_integer: true, greater_than_or_equal_to:0, message:"tiene que ser un numero y positivo",:allow_blank => TRUE}
   validates :telefono_movil,
             numericality: { only_integer: true, greater_than_or_equal_to:0, message:"tiene que ser un numero y positivo",:allow_blank => TRUE}
@@ -31,6 +32,4 @@ class Voluntario < ActiveRecord::Base
 	          format:{with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, message: "no valido",:allow_blank => TRUE}
   validates :licensia_conducir,
             numericality: { only_integer: true, greater_than_or_equal_to:0, message:"tiene que ser un numero y positivo",:allow_blank => TRUE}
-  validates :"formacion_academica",
-            format:{ with: /\A[a-zA-Z]+\s/,message: "solo se permiten letras", :allow_blank => TRUE }
 end

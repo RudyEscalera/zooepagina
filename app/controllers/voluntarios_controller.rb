@@ -5,7 +5,7 @@ class VoluntariosController < ApplicationController
   # GET /voluntarios
   # GET /voluntarios.json
   def index
-     @palabra = ''
+    @palabra = ''
     @palabra = params[:palabra]
     @voluntarios= Voluntario.where("nombre LIKE '#{@palabra}%'")
   end
@@ -13,6 +13,7 @@ class VoluntariosController < ApplicationController
   # GET /voluntarios/1
   # GET /voluntarios/1.json
   def show
+    @rescates = Rescate.where( voluntario: @voluntario.id)
   end
 
   # GET /voluntarios/new

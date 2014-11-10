@@ -74,11 +74,7 @@
   <strong>Formacion academica:</strong>
   <%= @voluntario.formacion_academica %>
 </p>
-<a href="#" id ="casa"class="btn btn-success"
-   >Ver lista</a>
-<div id="dialog" style="display:hidden; background:white" title="Basic dialog">
-  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
-</div>
+
 <%= link_to '<< Atras', voluntarios_path, class: "btn btn-default"  %> |
 <%= link_to 'Editar', edit_voluntario_path(@voluntario), class: "btn btn-warning" %> 
 <a href="#" class="btn btn-success"
@@ -94,7 +90,24 @@
         <h4 class="modal-title" id="myModalLabel">Mis Mascotas</h4>
       </div>
       <div class="modal-body" style="text-align:center;">
-        lorereams dasdasdasd  dasdasdasd  dasdasdsdasdasd dasdasda
+        <div class="table-responsive">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th class = "info">Direccion</th>
+                        <th class = "success">Fecha</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <% @rescates.each do |rescate| %>
+                        <tr>
+                          <td class = "info"><%= rescate.direccion_rescate %></td>
+                          <td class = "success"><%= rescate.fecha %></td>
+                      <% end %>
+                    </tbody>
+                  </table>
+                  </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
@@ -102,21 +115,5 @@
     </div>
   </div>
 </div>
-<script>
-  $(function() {
-       $( "#dialog" ).dialog({
-          autoOpen:false,
-          show:{
-            effect: "blind"
-          },
-          hide: {
-            effect: "explode"
-          }
-        });
 
-    $("#casa").click(function(){
-   $( "#dialog" ).dialog("open")   
-    });
-  });
-  </script>
 
