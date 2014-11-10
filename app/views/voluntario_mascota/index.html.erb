@@ -3,6 +3,8 @@
 <table>
   <thead>
     <tr>
+      <th>id voluntario</th>
+      <th>id mascota</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -10,6 +12,8 @@
   <tbody>
     <% @voluntario_mascota.each do |voluntario_mascotum| %>
       <tr>
+        <td><%= voluntario_mascotum.id_voluntario %></td>
+        <td><%= voluntario_mascotum.id_mascota %></td>
         <td><%= link_to 'Show', voluntario_mascotum %></td>
         <td><%= link_to 'Edit', edit_voluntario_mascotum_path(voluntario_mascotum) %></td>
         <td><%= link_to 'Destroy', voluntario_mascotum, method: :delete, data: { confirm: 'Are you sure?' } %></td>

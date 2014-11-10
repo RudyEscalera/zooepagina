@@ -21,6 +21,23 @@ class VoluntarioMascotaController < ApplicationController
   def edit
   end
 
+  def registrar
+    @id_mascota = params[:id_mascota]  
+    @id_voluntario = params[:id_voluntario] 
+
+    @voluntario_mascotum = VoluntarioMascotum.new
+    
+    @voluntario_mascotum.id_voluntario = @id_voluntario
+    @voluntario_mascotum.id_mascota = @id_mascota
+    @voluntario_mascotum.save
+
+    
+
+    redirect_to '/mascota'
+    
+    
+  end
+
   # POST /voluntario_mascota
   # POST /voluntario_mascota.json
   def create
@@ -69,6 +86,6 @@ class VoluntarioMascotaController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def voluntario_mascotum_params
-      params[:voluntario_mascotum]
+      params.require(:voluntario_mascotum).permit(:id_voluntario, :id_mascota)
     end
 end

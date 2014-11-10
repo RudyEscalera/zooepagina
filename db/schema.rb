@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141108201525) do
+ActiveRecord::Schema.define(version: 20141109133445) do
 
   create_table "adopcions", force: true do |t|
     t.integer  "numero_adultos"
@@ -131,6 +131,8 @@ ActiveRecord::Schema.define(version: 20141108201525) do
   create_table "voluntario_mascota", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "id_voluntario"
+    t.integer  "id_mascota"
   end
 
   create_table "voluntario_temporals", force: true do |t|

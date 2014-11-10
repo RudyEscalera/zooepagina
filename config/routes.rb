@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
   get '/adopcions/new/:id' => 'adopcions#new', as: 'nuevo_adop'
   get '/seguimientos/new/:id' => 'seguimientos#new', as: 'nuevo_seguimiento'
+  get '/voluntario_mascota/registrar' => 'voluntario_mascota#registrar', as: 'registrar_voluntario_mascota'
+  # post '/voluntario_mascota/registrar' => 'voluntario_mascota#registrar', as: 'registrar_voluntario_mascota'
+  # post '/voluntario_mascota/registrar_post' => 'voluntario_mascota#registrar_post', as: 'registrar_voluntario_mascota_post'
 
   resources :rescates
 

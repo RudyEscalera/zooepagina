@@ -48,7 +48,18 @@
  
 
 </div>
-
+<%= @voluntarios.size %>
+<form action="/voluntario_mascota/registrar" method="get">
+  <input type="hidden" id="id_mascota" name="id_mascota" value="<%@mascotum.id %>" >
+  
+  <select name="id_voluntario" id="id_voluntario">
+    <% @voluntarios.each do |voluntario| %>
+      <option value="<%voluntario.id%>"><%=voluntario.apellido_paterno%>&nbsp;<%= voluntario.nombre  %></option>}
+    <%end%>
+  </select>
+  <input type="submit" name="enviar" value="enviar">
+</form>
+  
 
 
 <%= link_to '<< Atras', mascota_path, :class => 'btn btn-default' %>

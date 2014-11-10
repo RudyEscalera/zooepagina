@@ -10,7 +10,14 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="field">
+    <%= f.label :id_voluntario %>*
+    <%= f.number_field :id_voluntario, :required => true %>
+  </div>
+  <div class="field">
+    <%= f.label :id_mascota %>*
+    <%= f.number_field :id_mascota, :required => true %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

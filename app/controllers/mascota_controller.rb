@@ -25,6 +25,7 @@ class MascotaController < ApplicationController
   # GET /mascota/1
   # GET /mascota/1.json
   def show
+    @voluntarios = Voluntario.all
   end
 
  
