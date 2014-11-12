@@ -13,6 +13,10 @@ class NoticiaController < ApplicationController
   def buscar
 
   end
+  def public
+    @noticias = Noticium.all
+    # redirect_to '/mascota/public_mascota'
+  end
 
   # GET /noticia/1
   # GET /noticia/1.json

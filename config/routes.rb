@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   resources :voluntarios
   resources :noticia
+  get 'public' => 'noticia#public', as: 'public_noticia'
   resources :mascota
   get 'public' => 'mascota#public', as: 'public_mascota'
   resources :voluntario_temporals

@@ -18,5 +18,7 @@
 	  <%= @noticium.contenido %>
 	</p>
 </div>
-<%= link_to '<< Atras', noticia_path, :class => 'btn btn-default' %>
-<%= link_to 'Editar Noticia', edit_noticium_path(@noticium), :class => 'btn btn-warning' %> 
+<% if user_signed_in? %>
+	<%= link_to '<< Atras', noticia_path, :class => 'btn btn-default' %>
+	<%= link_to 'Editar Noticia', edit_noticium_path(@noticium), :class => 'btn btn-warning' %> 
+<%end%>

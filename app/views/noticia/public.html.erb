@@ -1,0 +1,16 @@
+
+<div class="jumbotron">
+  <h1>Noticias</h1>
+  <br>
+  <br>
+  <br>
+  	<div align="left">
+		<%@noticias.each do |noticia|%>
+			<p><B>Titulo = </B><%= noticia.titulo %></p>
+			<p><B>Categoria = </B><%= noticia.categoria %></p>
+			<p>...</p>	
+			<td><%= link_to 'Ver Noticia', noticia, :class => 'btn btn-primary' %></td>
+			<hr>
+		<%end%>
+	</div>
+</div>
