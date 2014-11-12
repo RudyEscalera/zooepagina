@@ -1,0 +1,22 @@
+
+
+
+<div class="row">
+	<%@mascotas.each do |mascota|%>
+  		<div class="col-sm-6 col-md-4">
+    		<div class="thumbnail">
+      			<!-- <img data-src="holder.js/300x200" alt="..."> -->
+      			<div class="caption">
+	        		<h3><%= mascota.nombre %></h3>
+					
+					<p>Codigo &nbsp;<%= mascota.id %></p>
+					<p><B>Especie = </B><%= mascota.especie %></p>
+					<p><B>Color = </B><%= mascota.color %></p>
+					<p>...</p>	
+					<p><%= link_to 'Ver ', mascota, :class => 'btn btn-primary' %></p>
+					<hr>
+      			</div>
+    		</div>
+  		</div>
+	<%end%>
+</div>

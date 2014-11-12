@@ -18,11 +18,11 @@
             <li><%= link_to('Editar Perfil', edit_user_registration_path) %></li> 
             <li><%= link_to('Salir', destroy_user_session_path, 
               :method => :delete) %></li>
-            <li>  <%= link_to 'Mascotas', public_mascota_path %></li>
+            <li>  <%= link_to 'Mascotas', publico_mascota_path %></li>
             <li>  <%= link_to 'Noticias', public_noticia_path %></li>
             
           <% else %>
-            <li>  <%= link_to 'Mascotas', public_mascota_path %></li>
+            <li>  <%= link_to 'Mascotas', publico_mascota_path %></li>
             <li>  <%= link_to 'Noticias', public_noticia_path %></li>
             <li ><%= link_to('Registrarse', new_user_registration_path) %></li>
             <li ><%= link_to('Login', new_user_session_path)  %></li>

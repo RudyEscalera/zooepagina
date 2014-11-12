@@ -24,9 +24,9 @@ class MascotaController < ApplicationController
   end
 
 
-  def public
+  def publico
     @mascotas = Mascotum.where(:estado=>"adopcion")
-    # redirect_to '/mascota/public_mascota'
+    # redirect_to '/'
   end
 
   # GET /mascota/1
