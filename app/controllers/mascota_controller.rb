@@ -25,7 +25,9 @@ class MascotaController < ApplicationController
   # GET /mascota/1
   # GET /mascota/1.json
   def show
+    @id_mascota = params[:id]
     @voluntarios = Voluntario.all
+    @voluntarios_mascotas=VoluntarioMascotum.where(:id_mascota=>@id_mascota).last
   end
 
  

@@ -22,8 +22,9 @@ class VoluntarioMascotaController < ApplicationController
   end
 
   def registrar
-    @id_mascota = params[:id_mascota]  
-    @id_voluntario = params[:id_voluntario] 
+    @id_mascota = params[:id_mascota] 
+    @id_voluntario = params[:id_voluntario]
+
 
     @voluntario_mascotum = VoluntarioMascotum.new
     

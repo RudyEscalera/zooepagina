@@ -48,18 +48,38 @@
  
 
 </div>
-<%= @voluntarios.size %>
-<form action="/voluntario_mascota/registrar" method="get">
-  <input type="hidden" id="id_mascota" name="id_mascota" value="<%@mascotum.id %>" >
-  
-  <select name="id_voluntario" id="id_voluntario">
-    <% @voluntarios.each do |voluntario| %>
-      <option value="<%voluntario.id%>"><%=voluntario.apellido_paterno%>&nbsp;<%= voluntario.nombre  %></option>}
+<div align=left>
+  <form action="/voluntario_mascota/registrar" method="get">
+    <input type="hidden" id="id_mascota" name="id_mascota" value="<%=@mascotum.id %>" >
+    <br>
+    <p>
+      Asignar Voluntario &nbsp;
+      <select name="id_voluntario" id="id_voluntario">
+        <% @voluntarios.each do |voluntario| %>
+          <option value="<%=voluntario.id%>"><%= voluntario.nombre  %></option>}
+        <%end%>
+      </select>
+    </p>
+    <input type="submit" name="enviar" value="Asignar">  
+  </form>
+</div>
+<hr>
+
+<h3>Voluntario encargado</h3>
+
+<%if @voluntarios_mascotas != nil %>
+  <% @voluntarios.each do |voluntario| %>
+    <%if voluntario.id == @voluntarios_mascotas.id_voluntario%>
+      <div align=left>
+        <p>ID VOLUNTARIO::<%= voluntario.id %></p>
+        <p>CI::<%= voluntario.ci %></p>
+        <p>NOMBRE::<%= voluntario.nombre %></p>
+        <p>APELLIDO PATERNO::<%= voluntario.apellido_paterno %></p>
+      </div>
     <%end%>
-  </select>
-  <input type="submit" name="enviar" value="enviar">
-</form>
-  
+  <%end%>
+<%end%>
+
 
 
 <%= link_to '<< Atras', mascota_path, :class => 'btn btn-default' %>
