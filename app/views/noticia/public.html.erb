@@ -1,16 +1,18 @@
 
-<div class="jumbotron">
-  <h1>Noticias</h1>
-  <br>
-  <br>
-  <br>
-  	<div align="left">
-		<%@noticias.each do |noticia|%>
-			<p><B>Titulo = </B><%= noticia.titulo %></p>
-			<p><B>Categoria = </B><%= noticia.categoria %></p>
-			<p>...</p>	
-			<td><%= link_to 'Ver Noticia', noticia, :class => 'btn btn-primary' %></td>
-			<hr>
-		<%end%>
+<article class="col-sm-8 maincontent">
+	<div>
+	  <h1>Noticias</h1>
+	  <br>
+	  <br>
+	  <br>
+	  	<div align="left">
+			<%@noticias.each do |noticia|%>
+				<h3><%= noticia.titulo %></h3>
+				<p><B>Categoria = </B><%= noticia.categoria %></p>
+				<p><h4>Informacion</h4> <br><%= noticia.contenido %></p>
+				<hr>
+			<%end%>
+		</div>
 	</div>
-</div>
+
+</article>

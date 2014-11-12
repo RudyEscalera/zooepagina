@@ -1,14 +1,16 @@
 
-
-
+<h1>Mascotas</h1>
+<br>
+<br>
+<br>
 <div class="row">
 	<%@mascotas.each do |mascota|%>
   		<div class="col-sm-6 col-md-4">
     		<div class="thumbnail">
       			<!-- <img data-src="holder.js/300x200" alt="..."> -->
-      			<div class="caption">
+      			<div class="caption" align="left" >
 	        		<h3><%= mascota.nombre %></h3>
-					
+					<br>
 					<p>Codigo &nbsp;<%= mascota.id %></p>
 					<p><B>Especie = </B><%= mascota.especie %></p>
 					<p><B>Color = </B><%= mascota.color %></p>
