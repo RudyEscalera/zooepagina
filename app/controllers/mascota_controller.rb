@@ -2,6 +2,8 @@ class MascotaController < ApplicationController
   before_action :set_mascotum, only: [:show, :edit, :update, :destroy]
 
   # @nuevo = true
+
+ 
   
   # GET /mascota
   # GET /mascota.json
@@ -19,7 +21,12 @@ class MascotaController < ApplicationController
         send_data pdf.render, filename: "mascotas.pdf", type: "application/pdf", disposition: "inline"
       end
     end
+  end
 
+
+  def public
+    @mascotas = Mascotum.where(:estado=>"adopcion")
+    # redirect_to '/mascota/public_mascota'
   end
 
   # GET /mascota/1
@@ -83,6 +90,9 @@ class MascotaController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.

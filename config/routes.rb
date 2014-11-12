@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :voluntarios
   resources :noticia
   resources :mascota
+  get 'public' => 'mascota#public', as: 'public_mascota'
   resources :voluntario_temporals
   resources :veterinaria
   get "welcome/lista_usuario" => 'welcome#lista_usuario', :as  => 'lista_usuario'

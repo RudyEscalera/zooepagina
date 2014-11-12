@@ -18,11 +18,14 @@
             <li><%= link_to('Editar Perfil', edit_user_registration_path) %></li> 
             <li><%= link_to('Salir', destroy_user_session_path, 
               :method => :delete) %></li>
+            <li>  <%= link_to 'Mascotas', public_mascota_path %></li>
             
-        <% else %>
-          <li ><%= link_to('Registrarse', new_user_registration_path) %></li>
-          <li ><%= link_to('Login', new_user_session_path)  %></li>
-        <% end %>
+          <% else %>
+            <li>  <%= link_to 'Mascotas', public_mascota_path %></li>
+            <li ><%= link_to('Registrarse', new_user_registration_path) %></li>
+            <li ><%= link_to('Login', new_user_session_path)  %></li>
+
+          <% end %>
           </ul>
 					
         </div><!--/.nav-collapse -->
@@ -54,6 +57,8 @@
           data-toggle="modal"
           data-target="#modalRescate">Rescate</a>
           
+          <a href="/mascota" class="btn btn-success btn-lg">Mascotas </a>
+          <a href="/noticia" class="btn btn-success btn-lg">Noticias</a>
           <% if current_user.admin? %>
           <%= link_to 'Usuarios', lista_usuario_path,class: "btn btn-success btn-lg"%>
           <% end -%>
@@ -62,8 +67,6 @@
           <%= link_to 'Adopciones', adopcions_path, class: "btn btn-success btn-lg" %>
 <% end %>
 <% end %>
- <a href="/mascota" class="btn btn-success btn-lg">Mascotas </a>
-          <a href="/noticia" class="btn btn-success btn-lg">Noticias</a>
           </div>
 </div>
 </div>
