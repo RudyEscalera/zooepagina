@@ -39,8 +39,38 @@
 </br>
 </br>
 <!-- barra izquierda -->
+<div class= "barraizquierdafijo">
+  <div class='row'>
+  <div class="col-lg-4" style="width: 28%;">
+    <div class="page-header"style="position:fixed; top:15%; left:20px;">
+        <div class="btn-group-vertical"> 
+        <% if user_signed_in? %>
+          <% if current_user.estado?  %>
+          <a href="#" 
+          data-toggle="modal"
+          data-target="#modalVeterinaria">Veterinaria</a>
 
+           <a href="#" 
+          data-toggle="modal"
+          data-target="#modalVoluntario">Voluntario</a>
 
+          <a href="#"
+          data-toggle="modal"
+          data-target="#modalRescate">Rescate</a>
+          
+          <a href="/mascota">Mascotas </a>
+          <a href="/noticia">Noticias</a>
+          <% if current_user.admin? %>
+          <%= link_to 'Usuarios', lista_usuario_path%>
+          <% end -%>
+         
+          <a href="/hogar_temporals">Hogar Temporal</a>
+          <%= link_to 'Adopciones', adopcions_path%>
+<% end %>
+<% end %>
+          </div>
+</div>
+</div>
 
 
 
