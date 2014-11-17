@@ -16,8 +16,6 @@ class Voluntario < ActiveRecord::Base
             numericality: { only_integer: true, greater_than_or_equal_to:0, message:"tiene que ser un numero y positivo",:allow_blank => TRUE}
   validates :fecha_nacimiento,
             presence:{message:"es necesarrio fecha de nacimiento",:allow_blank => TRUE}
-  validates :lugar_nacimiento,
-            format:{ with:/\A[a-zA-Z0-9]+\s/,message: "No se permiten caracteres especiales" ,:allow_blank => TRUE}
   validates :edad,
             numericality: { only_integer: true, greater_than_or_equal_to:0, message:"tiene que ser un numero y positivo",:allow_blank => TRUE}
   validates :direccion,

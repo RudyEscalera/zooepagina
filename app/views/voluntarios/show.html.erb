@@ -1,85 +1,72 @@
+<div class = "formulario">
+<div style="clear:both"></div>
   <p id="notice"><%= notice %></p>
+<div>
+  <strong>Nombre:</strong></div>
+  <div><%= @voluntario.nombre %></div>
+<div style="clear:both"></div>
+<div>
+  <strong>Apellido paterno:</strong></div>
+  <div><%= @voluntario.apellido_paterno %></div>
+<div style="clear:both"></div>
+<div>
+  <strong>Apellido materno:</strong></div>
+  <div><%= @voluntario.apellido_materno %></div>
+<div style="clear:both"></div>
+<div>
+  <strong>Estado:</strong></div>
+  <div><%= @voluntario.estado %></div>
+<div style="clear:both"></div>
+<div><strong>Ci:</strong></div>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @voluntario.nombre %>
-</p>
-
-<p>
-  <strong>Apellido paterno:</strong>
-  <%= @voluntario.apellido_paterno %>
-</p>
-
-<p>
-  <strong>Apellido materno:</strong>
-  <%= @voluntario.apellido_materno %>
-</p>
-
-<p>
-  <strong>Estado:</strong>
-  <%= @voluntario.estado %>
-</p>
-
-<p>
-  <strong>Ci:</strong>
-  <%= @voluntario.ci %>
-</p>
-
-<p>
-  <strong>Fecha nacimiento:</strong>
-  <%= @voluntario.fecha_nacimiento %>
-</p>
-
-<p>
-  <strong>Lugar nacimiento:</strong>
-  <%= @voluntario.lugar_nacimiento %>
-</p>
-
-<p>
-  <strong>Edad:</strong>
-  <%= @voluntario.edad %>
-</p>
-
-<p>
-  <strong>Estado civil:</strong>
-  <%= @voluntario.estado_civil %>
-</p>
-
-<p>
-  <strong>Direccion:</strong>
-  <%= @voluntario.direccion %>
-</p>
-
-<p>
-  <strong>Telefono fijo:</strong>
-  <%= @voluntario.telefono_fijo %>
-</p>
-
-<p>
-  <strong>Telefono movil:</strong>
-  <%= @voluntario.telefono_movil %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @voluntario.email %>
-</p>
-
-<p>
-  <strong>Licensia conducir:</strong>
-  <%= @voluntario.licensia_conducir %>
-</p>
-
-<p>
-  <strong>Formacion academica:</strong>
-  <%= @voluntario.formacion_academica %>
-</p>
-
-<%= link_to '<< Atras', voluntarios_path, class: "btn btn-default"  %> |
-<%= link_to 'Editar', edit_voluntario_path(@voluntario), class: "btn btn-warning" %> 
-<a href="#" class="btn btn-success"
+  <div><%= @voluntario.ci %></div>
+<div style="clear:both"></div>
+<div>
+  <strong>Fecha nacimiento:</strong></div>
+  <div><%= @voluntario.fecha_nacimiento %></div>
+<div style="clear:both"></div>
+<div>
+  <strong>Lugar nacimiento:</strong></div>
+  <div><%= @voluntario.lugar_nacimiento %></div>
+<div style="clear:both"></div>
+<div>
+  <strong>Edad:</strong></div>
+  <div><%= @voluntario.edad %></div>
+<div style="clear:both"></div>
+<div>
+  <strong>Estado civil:</strong></div>
+  <div><%= @voluntario.estado_civil %></div>
+<div style="clear:both"></div>
+<div>
+  <strong>Direccion:</strong></div>
+  <div><%= @voluntario.direccion %></div>
+<div style="clear:both"></div>
+<div>
+  <strong>Telefono fijo:</strong></div>
+  <div><%= @voluntario.telefono_fijo %></div>
+<div style="clear:both"></div>
+<div>
+  <strong>Telefono movil:</strong></div>
+  <div><%= @voluntario.telefono_movil %></div>
+<div style="clear:both"></div>
+<div>
+  <strong>Email:</strong></div>
+  <div><%= @voluntario.email %></div>
+<div style="clear:both"></div>
+<div>
+  <strong>Licensia conducir:</strong></div>
+  <div><%= @voluntario.licensia_conducir %></div>
+<div style="clear:both"></div>
+<div>
+  <strong>Formacion academica:</strong></div>
+  <div><%= @voluntario.formacion_academica %></div>
+<div style="clear:both"></div>
+<div>
+<%= link_to '<< Atras', voluntarios_path, class: "btn btn-default" %></div>
+<div><%= link_to 'Editar', edit_voluntario_path(@voluntario), class: "btn btn-warning" %></div>
+<div><a href="#" class="btn btn-success"
    data-toggle="modal"
-   data-target="#basicModal">Ver lista de Rescates</a>
+   data-target="#basicModal">Ver lista de Rescates</a></div>
 
 
 <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -115,5 +102,6 @@
     </div>
   </div>
 </div>
-
+  </div>
+</div>
 
