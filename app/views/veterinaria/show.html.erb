@@ -1,42 +1,41 @@
-<h1>Mostrando Veterinaria : <%= @veterinarium.nombre %></h1>
+<div class = "formulario">
+<div style="clear:both"></div>
+<h1>Veterinaria : <%= @veterinarium.nombre %></h1>
 <p id="notice"><%= notice %></p>
+<div style="clear:both"></div>
+<div>
+  <strong>Nombre:</strong></div>
+  <div><%= @veterinarium.nombre %></div>
+<div style="clear:both"></div>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @veterinarium.nombre %>
-</p>
+<div>
+  <strong>Direccion:</strong></div>
+  <div><%= @veterinarium.direccion %></div>
+<div style="clear:both"></div>
 
-<p>
-  <strong>Direccion:</strong>
-  <%= @veterinarium.direccion %>
-</p>
+<div>
+  <strong>Telefono:</strong></div>
+  <div><%= @veterinarium.telefono %></div>
+<div style="clear:both"></div>
 
-<p>
-  <strong>Telefono:</strong>
-  <%= @veterinarium.telefono %>
-</p>
-
-<p>
-  <strong>Movil:</strong>
-  <%= @veterinarium.movil %>
-</p>
-
-<p>
-  <strong>Encargado:</strong>
-  <%= @veterinarium.encargado %>
-</p>
-
-<p>
-  <strong>Activo:</strong>
-  <%= @veterinarium.activo %>
-</p>
-
-<p>
-  <strong>Descripcion:</strong>
-  <%= @veterinarium.descripcion %>
-</p>
-<%= link_to '<< Atras', veterinaria_path, :class=>"btn btn-default"  %>|
+<div>
+  <strong>Movil:</strong></div>
+  <div><%= @veterinarium.movil %></div>
+  <div style="clear:both"></div>
+<div>
+  <strong>Encargado:</strong></div>
+  <div><%= @veterinarium.encargado %></div>
+  <div style="clear:both"></div>
+<div>
+  <strong>Activo:</strong></div>
+  <div><%= @veterinarium.activo %></div>
+  <div style="clear:both"></div>
+<div>
+  <strong>Descripcion:</strong></div>
+  <div><%= @veterinarium.descripcion %></div>
+  <div style="clear:both"></div>
+  <div class="actions">
 <%= link_to 'Editar', edit_veterinarium_path(@veterinarium), :class=>"btn btn-success"  %> 
-</br>
-<td>caso de uso ver veterinaria</td>
+</div>
+</div>
 
