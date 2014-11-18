@@ -38,26 +38,26 @@
   <div class="container-fluid">
     <div class="row">
       <!-- barra izquierda -->
-      <div class="col-xs-4" style="width:20%">
+      <div class="col-xs-4" style="width:20%; background-color: ">
         <ul class="nav nav-sidebar">
           <% if user_signed_in? %>
             <% if current_user.estado?  %>
               <li>
-                <a href="#" class="list-group-item" data-toggle="modal" data-target="#modalVeterinaria">Veterinaria</a>
+                <a href="#" class="list-group-item" data-toggle="modal" data-target="#modalVeterinaria" style="border-radius: 15px 0px 0px 15px;">Veterinaria</a>
               </li>
               <li>
-                <a href="#"  class="list-group-item" data-toggle="modal" data-target="#modalVoluntario">Voluntario</a>
+                <a href="#"  class="list-group-item" data-toggle="modal" data-target="#modalVoluntario" style="border-radius: 15px 0px 0px 15px;">Voluntario</a>
               </li>
               <li>
-                <a href="#" class="list-group-item" data-toggle="modal" data-target="#modalRescate">Rescate</a>
+                <a href="#" class="list-group-item" data-toggle="modal" data-target="#modalRescate" style="border-radius: 15px 0px 0px 15px;">Rescate</a>
               </li>
-              <li><a href="/mascota" class="list-group-item">Mascotas </a></li>
-              <li><a href="/noticia" class="list-group-item">Noticias</a></li>
+              <li><a href="/mascota" class="list-group-item" style="border-radius: 15px 0px 0px 15px;">Mascotas </a></li>
+              <li><a href="/noticia" class="list-group-item" style="border-radius: 15px 0px 0px 15px;">Noticias</a></li>
               <% if current_user.admin? %>
-                <li><%= link_to 'Usuarios' , lista_usuario_path, class: "list-group-item"%></li>
+                <li><%= link_to 'Usuarios' , lista_usuario_path, class: "list-group-item", :style=>"border-radius: 15px 0px 0px 15px;"%></li>
               <% end -%>
-              <li><a href="/hogar_temporals" class="list-group-item">Hogar Temporal </a></li>
-              <li> <%= link_to 'Adopciones', adopcions_path, class: "list-group-item"%></li>
+              <li><a href="/hogar_temporals" class="list-group-item" style="border-radius: 15px 0px 0px 15px;">Hogar Temporal </a></li>
+              <li> <%= link_to 'Adopciones', adopcions_path, class: "list-group-item", :style=>"border-radius: 15px 0px 0px 15px;"%></li>
             <% end %>
           <% end %>
         </ul>
