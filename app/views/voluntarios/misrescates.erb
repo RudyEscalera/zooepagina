@@ -1,0 +1,18 @@
+<div class="table-responsive">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th class = "info">Direccion</th>
+                        <th class = "success">Fecha</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <% @rescates.each do |rescate| %>
+                        <tr>
+                          <td class = "info"><%= rescate.direccion_rescate %></td>
+                          <td class = "success"><%= rescate.fecha %></td>
+                      <% end %>
+                    </tbody>
+                  </table>
+                  </div>
