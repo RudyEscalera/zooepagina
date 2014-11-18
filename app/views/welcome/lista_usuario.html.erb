@@ -20,7 +20,7 @@
     <% @usuarios.each do |usuario| %>
       <tr>
         <td class = "info"><%= usuario.email%></td>
-        <td><%= link_to 'Mostrar', :controller => :welcome ,:action => :perfil, :id => usuario.id %></td>
+        <td><%= link_to 'Ver', :controller => :welcome ,:action => :perfil, :id => usuario.id %></td>
         <% if usuario.estado ==nil %>
             <td class = "success">
               <%= link_to 'Habilitarlo', :controller => :welcome ,:action => :habilitarlo, :id => usuario.id %>

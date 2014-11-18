@@ -11,9 +11,13 @@
     </tr>
   </thead>
   <tbody>
+  <% if user_signed_in? %>
+          <% if current_user.estado?  %>
 				<div class="col-md-4">	
 						<%= link_to 'Registrar Veterinaria', new_veterinarium_path, :class=>"btn btn-info"  %>					
 			</div>
+      <% end -%>
+      <% end -%>
        <%= form_tag({:controller => "veterinaria", :action => "index"}, :method => :get) do %>
        <%= text_field_tag "searchbox", params[:searchbox], :placeholder => "Buscar", :name => 'palabra' %>
        <%= submit_tag "Buscar", :name => nil %>
@@ -25,11 +29,14 @@
         <td class = "info"><%= link_to veterinarium.nombre , veterinarium%></td>
         <td class = "success"><%=veterinarium.direccion %></td>
         <td><%= link_to 'Ver', veterinarium, :class=>"btn btn-primary" %></td>
+        <% if user_signed_in? %>
+          <% if current_user.estado?  %>
         <td><%= link_to 'Editar', edit_veterinarium_path(veterinarium),:class=>"btn btn-warning" %></td>
         <td><%= link_to 'Eliminar', veterinarium, method: :delete, data: { confirm: 'esta seguro?' },:class=>"btn btn-danger" %></td>	
+        <% end -%>
+        <% end -%>
       </tr>
     <% end %>
-		<td>es el caso de uso buscar veterinaria</td>
   </tbody>
 </table>
 </div>
