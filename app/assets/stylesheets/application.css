@@ -9,11 +9,11 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
+ *= require jquery-ui
  *= require_tree .
  *= require_self
  */
-.cabecera{
+ .cabecera{
 	position: absolute;
 	width: 800px;
 	left: 30%;
@@ -27,7 +27,7 @@
 	left: 20%;
 	top: 15%;
 	height: auto;
-	background-color: #f9f9f9;
+	background-color:rgba(192,203,109,.5);
 	border: 1px solid #cccccc;
 	color: #222222;
 	border-radius: 10px;

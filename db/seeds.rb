@@ -29,3 +29,7 @@ Veterinarium.create(nombre:"Narices Frias", direccion: "Av. Beijing a dos cuadra
 Veterinarium.create(nombre:"Dogtor Ami", direccion: "Av. Victor Ustariz casi av. Peru", telefono: "4448784", movil: "72279871", encargado: "Alena Reinaga", activo: true, descripcion: "")
 Veterinarium.create(nombre:"OGGI", direccion: "Uruguay entre Antezan y 16 de Julio", telefono: "", movil: "60770083", encargado: "Mabel Veizaga Rios", activo: true, descripcion: "Veterinaria Zootecnista")
 Veterinarium.create(nombre:"Serviviet", direccion: "Av. siles 4 cuadras antes del avion", telefono: "4599251", movil: "71787343", encargado: "Guerry Cordoba Ferrufino", activo: true, descripcion: "Diagnostico de displasia coxofemoral")
+
+#Voluntarios
+Voluntario.create(nombre: "Rudy", apellido_paterno:"Escalera", apellido_materno:"Mejia", estado: "false", ci: 6476895, fecha_nacimiento:"1990-11-7",lugar_nacimiento:"Cercado",edad:"24", estado_civil:"true",direccion:"Aurelio Garcia", telefono_fijo: 4286861, telefono_movil: "", email: "", licensia_conducir: nil,formacion_academica: nil)
+
