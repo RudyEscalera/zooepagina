@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body background="/assets/fondo2.jpg">
   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation ">
     <div class="container">
       <div class="navbar-header">
@@ -33,48 +33,57 @@
       </div><!--/.nav-collapse -->
     </div>
   </div>
-<!-- barra izquierda -->
 
+<!-- Division de la pagina en dos lado izq y derecho -->
+  <div class="container-fluid">
+    <div class="row">
+      <!-- barra izquierda -->
+      <div class="col-xs-4" style="width:30%">
+        <ul>
+          <% if user_signed_in? %>
+            <% if current_user.estado?  %>
+              <li>
+              <a href="#" class="list-group-item" 
+              data-toggle="modal"
+              data-target="#modalVeterinaria">Veterinaria</a></li>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-9 col-md-push-3">.col-md-9 .col-md-push-3 lado izq</div>
-    <br>
-    <br>
-    <br>
-    <div class="col-md-3 col-md-pull-9">.col-md-3 .col-md-pull-9</div>
+              <li><a href="#"  class="list-group-item"
+              data-toggle="modal"
+              data-target="#modalVoluntario">Voluntario</a></li>
+
+              <li><a href="#" class="list-group-item"
+              data-toggle="modal"
+              data-target="#modalRescate">Rescate</a></li>
+              
+              <li><a href="/mascota" class="list-group-item">Mascotas </a></li>
+              <li><a href="/noticia" class="list-group-item">Noticias</a></li>
+              <% if current_user.admin? %>
+                <li><%= link_to 'Usuarios' , lista_usuario_path, class: "list-group-item"%></li>
+              <% end -%>
+              <li><a href="/hogar_temporals" class="list-group-item">Hogar Temporal </a></li>
+              <li> <%= link_to 'Adopciones', adopcions_path, class: "list-group-item"%></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+      <br>
+      <br>
+      <br>
+      <!-- seccion del contenido -->
+      <div class="container">
+        <div class="col-xs-9 ">
+          
+            <%= yield %>
+          
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
 
 
 
-<div class="list-group" style="width:18%">
-  <% if user_signed_in? %>
-    <% if current_user.estado?  %>
-      <li>
-      <a href="#" class="list-group-item" 
-      data-toggle="modal"
-      data-target="#modalVeterinaria">Veterinaria</a>
 
-      <li><a href="#"  class="list-group-item"
-      data-toggle="modal"
-      data-target="#modalVoluntario">Voluntario</a>
-
-      <li><a href="#" class="list-group-item"
-      data-toggle="modal"
-      data-target="#modalRescate">Rescate</a></li>
-      
-      <li><a href="/mascota" class="list-group-item">Mascotas </a></li>
-      <li><a href="/noticia" class="list-group-item">Noticias</a></li>
-      <% if current_user.admin? %>
-        <li><%= link_to 'Usuarios' , lista_usuario_path, class: "list-group-item"%></li>
-      <% end -%>
-      <li><a href="/hogar_temporals" class="list-group-item">Hogar Temporal </a></li>
-      <li> <%= link_to 'Adopciones', adopcions_path, class: "list-group-item"%></li>
-    <% end %>
-  <% end %>
-</div>
 
         
           
@@ -144,13 +153,6 @@
 </div>
 
 
-<!-- pie de pagina -->       
-  <div class="contenido">
-    <div class="starter-template">
-      <p class="lead"><%= yield %>   
-        <!-- pie de pagina --> 
-      </p>
-    </div>
-  </div>
+
 </body>
 </html>
