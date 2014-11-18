@@ -13,7 +13,7 @@ class VoluntariosController < ApplicationController
   # GET /voluntarios/1
   # GET /voluntarios/1.json
   def show
-    @rescates = Rescate.where( voluntario: @voluntario.id)
+   
   end
 
   # GET /voluntarios/new
@@ -23,6 +23,10 @@ class VoluntariosController < ApplicationController
 
   # GET /voluntarios/1/edit
   def edit
+  end
+  def misrescates
+      voluntario_id = params[:id]
+     @rescates = Rescate.where( voluntario: voluntario_id)
   end
 
   # POST /voluntarios

@@ -65,44 +65,8 @@
 <div>
 <%= link_to '<< Atras', voluntarios_path, class: "btn btn-default" %></div>
 <div><%= link_to 'Editar', edit_voluntario_path(@voluntario), class: "btn btn-warning" %></div>
-<div><a href="#" class="btn btn-success"
-   data-toggle="modal"
-   data-target="#basicModal">Ver lista de Rescates</a></div>
-
-
-<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-       <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Mis Rescates</h4>
-      </div>
-      <div class="modal-body" style="text-align:center;">
-        <div class="table-responsive">
-                  <table class="table table-striped">
-                    <thead>
-                      <tr>
-                        <th class = "info">Direccion</th>
-                        <th class = "success">Fecha</th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      <% @rescates.each do |rescate| %>
-                        <tr>
-                          <td class = "info"><%= rescate.direccion_rescate %></td>
-                          <td class = "success"><%= rescate.fecha %></td>
-                      <% end %>
-                    </tbody>
-                  </table>
-                  </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
-  </div>
+<form class="navbar-form navbar-left" method="get" action=<%=misrescates_path(@voluntario.id)%> data-method="delete" >
+                      <button type="submit" class="btn btn-success">Ver lista de Rescates</button>
+                  </form>
 </div>
 </div>
