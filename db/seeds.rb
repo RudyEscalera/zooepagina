@@ -32,3 +32,4 @@ Veterinarium.create(nombre:"Serviviet", direccion: "Av. siles 4 cuadras antes de
 
 #Voluntarios
 Voluntario.create(nombre: "Rudy", apellido_paterno:"Escalera", apellido_materno:"Mejia", estado: "false", ci: 6476895, fecha_nacimiento:"1990-11-7",lugar_nacimiento:"Cercado",edad:"24", estado_civil:"true",direccion:"Aurelio Garcia", telefono_fijo: 4286861, telefono_movil: "", email: "", licensia_conducir: nil,formacion_academica: nil)
+
