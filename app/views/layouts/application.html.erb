@@ -42,18 +42,9 @@
         <ul>
           <% if user_signed_in? %>
             <% if current_user.estado?  %>
-              <li>
-              <a class="list-group-item" 
-              data-toggle="modal"
-              data-target="#modalVeterinaria">Veterinaria</a></li>
-
-              <li><a class="list-group-item"
-              data-toggle="modal"
-              data-target="#modalVoluntario">Voluntario</a></li>
-
-              <li><a class="list-group-item"
-              data-toggle="modal"
-              data-target="#modalRescate">Rescate</a></li>
+            <li><%= link_to 'Veterinaria' , veterinaria_path, class: "list-group-item"%></li>
+            <li><%= link_to 'Voluntario' , voluntarios_path, class: "list-group-item"%></li>
+            <li><%= link_to 'Rescate' , rescates_path, class: "list-group-item"%></li>
               
               <li><a href="/mascota" class="list-group-item">Mascotas </a></li>
               <li><a href="/noticia" class="list-group-item">Noticias</a></li>
@@ -79,78 +70,6 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-
-        
-          
-
-
-<div class="modal fade" id="modalVeterinaria" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-       <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Veterinaria</h4>
-      </div>
-      <div class="modal-body" style="text-align:center;">
-        <div class="table-responsive">
-                  <%= link_to 'Buscar Veterinaria', veterinaria_path,:class=>"btn btn-info btn-lg"%>
-                  <%= link_to 'Registrar Veterinaria', new_veterinarium_path, :class=>"btn btn-info btn-lg"  %>  
-        </div>
-        </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Modal Voluntario-->  
-<div class="modal fade" id="modalVoluntario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-       <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Voluntario</h4>
-      </div>
-      <div class="modal-body" style="text-align:center;">
-        <div class="table-responsive">
-                  <%= link_to 'Buscar Voluntario', voluntarios_path, class: "btn btn-info btn-lg" %>
-                  <%= link_to 'Registrar Voluntario', new_voluntario_path, class: "btn btn-info btn-lg"%> 
-        </div>
-        </div>
-        <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Rescate-->  
-<div class="modal fade" id="modalRescate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-       <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Rescate</h4>
-      </div>
-      <div class="modal-body" style="text-align:center;">
-        <div class="table-responsive">
-                  <%= link_to 'Buscar Rescate', rescates_path, class: "btn btn-info btn-lg" %>  
-                  <%= link_to 'Registrar Rescate', new_rescate_path, class: "btn btn-info btn-lg" %> 
-        </div>
-        </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 
