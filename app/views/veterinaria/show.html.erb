@@ -1,3 +1,4 @@
+<div align="left"> 
 <div class = "formulario">
 <div style="clear:both"></div>
 <h1>Veterinaria : <%= @veterinarium.nombre %></h1>
@@ -26,16 +27,25 @@
   <strong>Encargado:</strong></div>
   <div><%= @veterinarium.encargado %></div>
   <div style="clear:both"></div>
-<div>
-  <strong>Activo:</strong></div>
+
+  <% if user_signed_in? %>
+          <% if current_user.estado?  %>
+  <div><strong>Activo:</strong></div>
   <div><%= @veterinarium.activo %></div>
   <div style="clear:both"></div>
+  <% end -%>
+  <% end -%>
 <div>
   <strong>Descripcion:</strong></div>
   <div><%= @veterinarium.descripcion %></div>
   <div style="clear:both"></div>
+  <% if user_signed_in? %>
+          <% if current_user.estado?  %>
   <div class="actions">
 <%= link_to 'Editar', edit_veterinarium_path(@veterinarium), :class=>"btn btn-success"  %> 
+<% end -%>
+<% end -%>
+</div>
 </div>
 </div>
 

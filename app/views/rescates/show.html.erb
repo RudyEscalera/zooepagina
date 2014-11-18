@@ -1,24 +1,27 @@
+<div align="left"> 
+<div class = "formulario">
+<div style="clear:both"></div>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Direccion rescate:</strong>
-  <%= @rescate.direccion_rescate %>
-</p>
+  <div><strong>Direccion rescate:</strong></div>
+  <div><%= @rescate.direccion_rescate %></div>
+<div style="clear:both"></div>
 
-<p>
-  <strong>Observacion:</strong>
-  <%= @rescate.observacion %>
-</p>
+  <div><strong>Observacion:</strong></div>
+  <div><%= @rescate.observacion %></div>
+  <div style="clear:both"></div>
 
-<p>
-  <strong>Fecha:</strong>
-  <%= @rescate.fecha %>
-</p>
-<p>
-  <strong>Voluntario:</strong>
-  <%= @voluntario %>
-</p>
+  <div><strong>Fecha:</strong></div>
+  <div><%= @rescate.fecha %></div>
+  <div style="clear:both"></div>
 
-<%= link_to '<< Atras', rescates_path,class: "btn btn-default"  %>|
-<%= link_to 'Editar', edit_rescate_path(@rescate),class: "btn btn-warning" %> 
+  <div><strong>Voluntario:</strong></div>
+  <div><%= @voluntario %></div>
+  <div style="clear:both"></div>
 
+<div><%= link_to '<< Atras', rescates_path,class: "btn btn-default"  %>|</div>
+<div><%= link_to 'Editar', edit_rescate_path(@rescate),class: "btn btn-warning" %> </div>
+
+</div>
+</div>
+</div>
