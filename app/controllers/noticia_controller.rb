@@ -14,7 +14,7 @@ class NoticiaController < ApplicationController
 
   end
   def public
-    @noticias = Noticium.all
+    @noticias = Noticium.all.order('created_at desc')
     # redirect_to '/mascota/public_mascota'
   end
 

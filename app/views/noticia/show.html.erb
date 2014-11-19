@@ -1,24 +1,26 @@
 <h1>Ver Noticia</h1>
+<div class="jumbotron">
 
-<p id="notice"><%= notice %></p>
+	<p id="notice"><%= notice %></p>
 
-<div align="left"> 
-	<p>
-	  <strong>Titulo:</strong>
-	  <%= @noticium.titulo %>
-	</p>
+	<div align="left"> 
+		<p>
+		  <strong>Titulo:</strong>
+		  <%= @noticium.titulo %>
+		</p>
 
-	<p>
-	  <strong>Categoria:</strong>
-	  <%= @noticium.categoria %>
-	</p>
+		<p>
+		  <strong>Categoria:</strong>
+		  <%= @noticium.categoria %>
+		</p>
 
-	<p>
-	  <strong>Contenido:</strong>
-	  <%= @noticium.contenido %>
-	</p>
+		<p>
+		  <strong>Contenido:</strong>
+		  <%= @noticium.contenido %>
+		</p>
+	</div>
+	<% if user_signed_in? %>
+		<%= link_to '<< Atras', noticia_path, :class => 'btn btn-default' %>
+		<%= link_to 'Editar Noticia', edit_noticium_path(@noticium), :class => 'btn btn-warning' %> 
+	<%end%>
 </div>
-<% if user_signed_in? %>
-	<%= link_to '<< Atras', noticia_path, :class => 'btn btn-default' %>
-	<%= link_to 'Editar Noticia', edit_noticium_path(@noticium), :class => 'btn btn-warning' %> 
-<%end%>

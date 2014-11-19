@@ -65,9 +65,9 @@
           <!-- <td><%= mascotum.anti %></td> -->
           <!-- <td><%= mascotum.esterilizacion %></td> -->
           <!-- <td><%= mascotum.observacion %></td> -->
-          <td><%= link_to 'Ver Mascota', mascotum, :class => 'btn btn-primary' %></td>
-          <td><%= link_to 'Editar Mascota', edit_mascotum_path(mascotum), :class => 'btn btn-warning' %></td>
-          <td><%= link_to 'Eliminar', mascotum, method: :delete, data: { confirm: 'Esta seguro?' }, :class => 'btn btn-danger' %></td>
+          <td><%= link_to 'Ver', mascotum, :class => 'btn btn-primary' %></td>
+          <td><%= link_to 'Editar', edit_mascotum_path(mascotum), :class => 'btn btn-warning' %></td>
+          
         </tr>
       <% end %>
     </tbody>

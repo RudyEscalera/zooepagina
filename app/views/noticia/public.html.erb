@@ -7,9 +7,13 @@
 	  <br>
 	  	<div align="left">
 			<%@noticias.each do |noticia|%>
-				<h3><%= noticia.titulo %></h3>
-				<p><B>Categoria = </B><%= noticia.categoria %></p>
-				<p><h4>Informacion</h4> <br><%= noticia.contenido %></p>
+			  	<div class="thumbnail">
+					<div class="caption" align="left" >
+					<h3><%= noticia.titulo %></h3>
+					<p><B>Categoria = </B><%= noticia.categoria %></p>
+					<p><h4>Informacion</h4> <br><%= noticia.contenido %></p>
+					</div>
+				</div>
 				<hr>
 			<%end%>
 		</div>
