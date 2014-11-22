@@ -6,7 +6,7 @@ class RescatesController < ApplicationController
   def index
     @palabra = ''
     @palabra = params[:palabra]
-    @rescates= Rescate.where("direccion_rescate LIKE '#{@palabra}%'")
+    @rescates= Rescate.where("direccion_rescate LIKE '#{@palabra}%'").order("fecha DESC")
   end
 
   # GET /rescates/1
