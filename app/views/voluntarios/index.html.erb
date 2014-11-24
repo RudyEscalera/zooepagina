@@ -18,16 +18,11 @@
         <%= text_field_tag "searchbox", params[:searchbox], :placeholder => "Buscar", :name => 'palabra' %>
         <%= submit_tag "Buscar", :name => nil %>
         <% end %>
-        <p>
-          <div class="btn-group">
-            <button type="button" class="btn btn-default">Ordenar por:</button>
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><%=link_to "Activos", ordertable_path%></li>
-              <li><%=link_to "Todos", voluntarios_path%></li>
-            </ul>
-          </div>
-          </p>
+
+        <div class="col-md-4">  
+                <%= link_to 'Mostrar Activos', ordertable_path, class: "btn btn-info"%>        
+        </div>
+
 			</br>
 			</br>
 		</br>
