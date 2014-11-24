@@ -73,7 +73,7 @@ class RescatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rescate_params
-      params.require(:rescate).permit(:direccion_rescate, :observacion, :fecha, :voluntario)
+      params.require(:rescate).permit(:direccion_rescate, :observacion, :fecha, :voluntario, :segrescates)
     end
     def actualizar_nombre
       if(params[:voluntario] != nil)

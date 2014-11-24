@@ -1,27 +1,42 @@
-<div align="left"> 
-<div class = "formulario">
-<div style="clear:both"></div>
-<p id="notice"><%= notice %></p>
+      <p id="notice"><%= notice %></p>
+      <p>
+        <strong>Direccion rescate:</strong>
+        <%= @rescate.direccion_rescate %>
+      </p>
+        
+        <p><strong>Observacion:</strong>
+        <%= @rescate.observacion %></p>
 
-  <div><strong>Direccion rescate:</strong></div>
-  <div><%= @rescate.direccion_rescate %></div>
-<div style="clear:both"></div>
+        <p>
+       <strong>Fecha:</strong>
+       <%= @rescate.fecha %></p>
+      <p>
+       <strong>Voluntario:</strong>
+       <%= @voluntario %></p>
+       <p>
+        <%= link_to '<< Atras', rescates_path,class: "btn btn-default"  %>|
+        <%= link_to 'Editar', edit_rescate_path(@rescate),class: "btn btn-warning" %> </p>
 
-  <div><strong>Observacion:</strong></div>
-  <div><%= @rescate.observacion %></div>
-  <div style="clear:both"></div>
-
-  <div><strong>Fecha:</strong></div>
-  <div><%= @rescate.fecha %></div>
-  <div style="clear:both"></div>
-
-  <div><strong>Voluntario:</strong></div>
-  <div><%= @voluntario %></div>
-  <div style="clear:both"></div>
-
-<div><%= link_to '<< Atras', rescates_path,class: "btn btn-default"  %>|</div>
-<div><%= link_to 'Editar', edit_rescate_path(@rescate),class: "btn btn-warning" %> </div>
-
-</div>
-</div>
-</div>
+            <h3>Registrar Visita</h3>
+            <%= form_for ([@rescate, @rescate.segrescates.build]) do |f| %>
+              <p><%= f.label :observacion %><br></p>
+              <p><%= f.text_area :body , :size =>'30x5' ,:required => true %></p>
+              <p><button class="button"><%= f.submit "crear seguimiento"%></button></p>
+           <% end %>
+           <%if @rescate.segrescates.count >0 %>
+             
+           <h3>Seguimientos</3>
+               <% @rescate.segrescates.each do |seguimiento|  %>
+               <%if  seguimiento.body?%>
+                <div style="  border-style: solid;border-width: 2px;">
+                 <p><h3>Observacion</h3></p>
+                  <p><%= seguimiento.body %></p>
+                  <p><%= seguimiento.created_at%></p>
+                  <p><button class="button"><%=link_to "borrar",[@rescate, seguimiento], :method => :delete, confirm: "esta seguro?"%></button></p>
+                 </div>
+                  </br>
+                  <br>
+               <%end%>
+              <% end %>
+         <%end %>
+               

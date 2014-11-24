@@ -1,4 +1,5 @@
 class Rescate < ActiveRecord::Base
+  has_many :segrescates
   validates :direccion_rescate,
             presence:{ message:": es necesario una direccion" },
             length:{minimum:2, maximum:30 ,message:"tiene que ser mayor a 1 letra y menor a 30",:allow_blank => TRUE},

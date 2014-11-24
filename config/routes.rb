@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  get 'segrescates/create'
 
+  get 'segrescates/destroy'
+
+ resources :rescates do
+    resources :segrescates
+  end
   resources :seguimientos
 
   devise_for :users
@@ -14,8 +20,9 @@ Rails.application.routes.draw do
   get '/voluntario_mascota/registrar' => 'voluntario_mascota#registrar', as: 'registrar_voluntario_mascota'
   # post '/voluntario_mascota/registrar' => 'voluntario_mascota#registrar', as: 'registrar_voluntario_mascota'
   # post '/voluntario_mascota/registrar_post' => 'voluntario_mascota#registrar_post', as: 'registrar_voluntario_mascota_post'
+  get "voluntarios/ordertable" => 'voluntarios#ordertable', :as  => 'ordertable'
 
-  resources :rescates
+ 
 
   resources :voluntario_mascota
 

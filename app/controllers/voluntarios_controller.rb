@@ -15,6 +15,10 @@ class VoluntariosController < ApplicationController
   def show
    
   end
+  def ordertable
+    @voluntarios = Voluntario.where(estado: "true")
+    render 'index'
+  end
 
   # GET /voluntarios/new
   def new

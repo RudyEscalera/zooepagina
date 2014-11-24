@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141109133445) do
+ActiveRecord::Schema.define(version: 20141123215331) do
 
   create_table "adopcions", force: true do |t|
     t.integer  "numero_adultos"
@@ -83,6 +83,14 @@ ActiveRecord::Schema.define(version: 20141109133445) do
     t.datetime "updated_at"
     t.date     "fecha"
     t.string   "voluntario"
+  end
+
+  create_table "segrescates", force: true do |t|
+    t.integer  "rescate_id"
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "body"
   end
 
   create_table "seguimientos", force: true do |t|
