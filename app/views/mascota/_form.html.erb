@@ -18,8 +18,20 @@
   </div>
   <div >
     <%= f.label :especie %>
-    <%= f.select(:especie,options_for_select([['Perro', "perro"], ['Gato',"gato"]], 2)) %>
+    <%if params[:id] != nil %>
+      <%if @mascotum.especie == 'gato' %>
+        <%= f.select(:especie,options_for_select([['Perro', "perro"], ['Gato',"gato",:selected=>true]], 2)) %>
+      <%else%>
+        <%= f.select(:especie,options_for_select([['Perro', "perro",:selected=>true], ['Gato',"gato"]], 2)) %>
+      <%end%>
+    <%else%>
+      <%= f.select(:especie,options_for_select([['Perro', "perro"], ['Gato',"gato"]], 2)) %>
+    <%end%>
   </div>
+
+
+
+  
   <div >
     *
     <%= f.label :raza %>
@@ -27,7 +39,16 @@
   </div>
   <div >
     <%= f.label :sexo %>
-    <%= f.select(:sexo,options_for_select([['Macho', "macho"], ['Hembra',"hembra"]], 2)) %>
+    <%if params[:id] != nil %>
+      <%if @mascotum.sexo == 'macho' %>
+        <%= f.select(:sexo,options_for_select([['Macho', "macho",:selected=>true], ['Hembra',"hembra"]], 2)) %>
+      <%else%>
+        <%= f.select(:sexo,options_for_select([['Macho', "macho"], ['Hembra',"hembra",:selected=>true]], 2)) %>
+      <%end%>
+    <%else%>
+      <%= f.select(:sexo,options_for_select([['Macho', "macho"], ['Hembra',"hembra"]], 2)) %>
+    <%end%>
+
   </div>
   <div >
     *
