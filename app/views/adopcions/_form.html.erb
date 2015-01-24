@@ -16,7 +16,18 @@
   </div>
   <div class="field">
     <%= f.label :id_mascota %>*
-    <%= f.number_field :id_mascota, :required => true %>
+ 
+
+    <select id="adopcion_id_mascota" name="adopcion[id_mascota]">
+      <%@mascotas.each do |mascota|%>
+        <option value="<%= mascota.id %>"><%= mascota.id %> &nbsp; <%= mascota.nombre %>&nbsp; <%= mascota.especie %>&nbsp; <%= mascota.color %>&nbsp; <%= mascota.sexo %>&nbsp;edad = <%= mascota.edad %></option>
+      <%end%>
+      
+    </select>
+    
+
+
+
   </div>
   <div class="field">
     <%= f.label :numero_adultos %>*

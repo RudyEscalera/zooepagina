@@ -71,7 +71,10 @@
     <%= f.text_area :observacion, :rows => 10, :cols => 30%>
   </div>
 
-  
+  <p>
+    <%= f.file_field :image %>
+  </p>
+
   <div class="actions">
     <%= f.submit :Guardar, :class => 'btn btn-success' %>
   </div>

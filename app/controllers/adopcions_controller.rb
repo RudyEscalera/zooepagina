@@ -24,10 +24,36 @@ class AdopcionsController < ApplicationController
     @seguimientos = Seguimiento.where(:id_adopcion => params[:id])
   end
 
+  def registrar_seguimiento
+    @id_adopcion = params[:id]
+    @observacion = params[:observacion]
+
+    @seguimiento = Seguimiento.new()
+    @seguimiento.id_adopcion = @id_adopcion
+    @seguimiento.observacion = @observacion
+    @seguimiento.save
+    # redirect_to '/'
+
+  end
+
   # GET /adopcions/new
   def new
     @persona_id = params[:id]
+    @adoptante = Persona.find(@persona_id)
     @adopcion = Adopcion.new
+    @animales = Mascotum.all
+    @adopciones = Adopcion.all
+
+    @animales.each do |mascota|
+      @adopciones.each do |adopcion|
+        if mascota.id == adopcion.id_mascota
+          mascota.estado = "adoptado"
+          mascota.save
+        end
+      end
+    end
+
+    @mascotas = Mascotum.where(:estado=>"adopcion")
 
   end
 
@@ -85,6 +111,6 @@ class AdopcionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def adopcion_params
-      params.require(:adopcion).permit( :id_mascota, :numero_adultos, :numero_ninios, :numero_perros, :numero_gatos, :numero_otros, :referencia_casa, :numero_referencia1, :numero_referencia2, :id_persona)
+      params.require(:adopcion).permit( :id_mascota, :numero_adultos, :numero_ninios, :numero_perros, :numero_gatos, :numero_otros, :referencia_casa, :numero_referencia1, :numero_referencia2, :id_persona, :id_adopcion, :observacion)
     end
 end

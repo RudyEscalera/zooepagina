@@ -48,6 +48,11 @@ gem 'autoprefixer-rails'
 # gem 'debugger', group: [:development, :test]
 
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
-
 gem 'prawn'
 gem 'prawn-table'
+# gem 'paperclip-dropbox'
+# gem 'paperclipdropbox', '~> 1.0.9'
+gem "paperclip-dropbox", ">= 1.1.7", :git => "https://github.com/janko-m/paperclip-dropbox.git"
+
+
+gem 'carrierwave', '~> 0.10.0'

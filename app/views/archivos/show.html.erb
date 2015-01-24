@@ -1,0 +1,13 @@
+<div>
+	<h1>mostrando archivos descargables</h1>
+	<h4 style="color: gray;">generamos links descargables para cada archivo</h4>
+</div>
+<div>
+	<ul>
+		<% @archivos.each do |arch| %>
+			<li>
+				<a href="<%=arch.file.url(download: true)%>"><%= arch.file_file_name %></a>
+			</li>
+		<%end%>
+	</ul>
+</div>

@@ -1,0 +1,9 @@
+<div>
+	<h1>subir archivos</h1>
+</div>
+<div>
+	<%= form_for @archivo, :html=>{:multipart=>true} do |a| %>
+		<%= a.file_field :file, :multiple=>true %>
+		<input type="submit" value="subir archivos">
+	<%end%>
+</div>

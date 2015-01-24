@@ -1,6 +1,12 @@
 class SeguimientosController < ApplicationController
   before_action :set_seguimiento, only: [:show, :edit, :update, :destroy]
 
+  def create
+    @adopcion = Adopcion.find(params[:adopcion_id])
+    @seguimiento = @adopcion.seguimientos.create(seguimiento_params)
+    redirect_to adopcion_path(@adopcion)
+  end
+
   # GET /seguimientos
   # GET /seguimientos.json
   def index
@@ -24,19 +30,18 @@ class SeguimientosController < ApplicationController
 
   # POST /seguimientos
   # POST /seguimientos.json
-  def create
-    @seguimiento = Seguimiento.new(seguimiento_params)
+  def registrar_seguimiento
+    @id_adopcion = params[:id_adopcion]
+    @observacion = params[:observacion]
 
-    respond_to do |format|
-      if @seguimiento.save
-        format.html { redirect_to '/adopcions', notice: 'Seguimiento Creado.' }
-        format.json { render :show, status: :created, location: @seguimiento }
-      else
-        format.html { render :new }
-        format.json { render json: @seguimiento.errors, status: :unprocessable_entity }
-      end
-    end
+    @seguimiento = Seguimiento.new
+    @seguimiento.id_adopcion = @id_adopcion
+    @seguimiento.observacion = @observacion
+    @seguimiento.save
+    redirect_to '/'
+
   end
+
 
   # PATCH/PUT /seguimientos/1
   # PATCH/PUT /seguimientos/1.json

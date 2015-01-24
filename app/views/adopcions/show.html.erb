@@ -1,3 +1,6 @@
+
+
+
 <center><h1>Ver Adopcion</h1></center>
 <br>
 <br>
@@ -75,22 +78,53 @@
 <%= link_to 'Editar', edit_adopcion_path(@adopcion), :class => 'btn btn-warning' %> 
 
 <!-- PARTE DE SEGUIMIENTOS -->
-<p>Id :: <%= @id_adopcion%> </p>
+<p>Id adopcion :: <%= @id_adopcion%> </p>
 <p>Seguimientos :: <%= @seguimientos.size%> </p>
 
 <div id="seguimientos" align="left">
   <hr>
   <h2>Seguimientos</h2>
-  <%@seguimientos.each do |seguimiento|%>
-    Fecha::<%= seguimiento.created_at %>
-    <br>
-    <%= seguimiento.observacion %>
-    <br>
-    <div align="right">
-      <%= link_to 'Editar', edit_seguimiento_path(seguimiento) %>
-      <%= link_to 'Eliminar', seguimiento, method: :delete, data: { confirm: 'Esta seguro?' } %>
-    </div>
+
+<h2>Comments</h2>
+<% @adopcion.seguimientos.each do |seguimiento| %>
+  <% if seguimiento.id_adopcion.to_i == @id_adopcion.to_i %>
+    <p>
+      <strong>id adopcion:</strong>
+      <%= seguimiento.id_adopcion %>
+    </p>
+   <p>
+     <strong>Fecha:</strong>
+     <%= seguimiento.created_at %>
+   </p>
+    <p>
+      <strong>Observacion:</strong>
+      <%= seguimiento.observacion %>
+    </p>
+    
     <hr>
   <%end%>
+<% end %>
+
+<%= form_for([@adopcion, @adopcion.seguimientos.build]) do |f| %>
+  <p>
+    <br>
+    <%= f.hidden_field :id_adopcion, :value=>  @id_adopcion%>
+  </p>
+  <p>
+    <%= f.label :observacion %><br>
+    <%= f.text_area :observacion, :size => "24x6" %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
+  
+
+   
+
+
 </div>
 </div>
+

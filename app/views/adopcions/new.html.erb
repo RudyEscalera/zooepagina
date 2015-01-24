@@ -1,5 +1,11 @@
 <h1>Registrar Adopcion</h1>
+
+
 <div class="jumbotron">
+<h3><%= @adoptante.nombres %> <%= @adoptante.apellido_paterno %> &nbsp; adoptara una mascota :D  </h3>
+<br>
+<br>
+<br>
 <%= render 'form' %>
 
 <%= link_to 'Back', adopcions_path %>

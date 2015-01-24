@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141123215331) do
+ActiveRecord::Schema.define(version: 20150124173526) do
 
   create_table "adopcions", force: true do |t|
     t.integer  "numero_adultos"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 20141123215331) do
     t.datetime "updated_at"
     t.integer  "id_persona"
     t.integer  "id_mascota"
+  end
+
+  create_table "archivos", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
   end
 
   create_table "hogar_temporals", force: true do |t|
@@ -53,9 +62,13 @@ ActiveRecord::Schema.define(version: 20141123215331) do
     t.string   "anti"
     t.string   "esterilizacion"
     t.text     "observacion"
-    t.string   "extension"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.string   "image"
   end
 
   create_table "noticia", force: true do |t|
@@ -98,7 +111,10 @@ ActiveRecord::Schema.define(version: 20141123215331) do
     t.text     "observacion"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "adopcion_id"
   end
+
+  add_index "seguimientos", ["adopcion_id"], name: "index_seguimientos_on_adopcion_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

@@ -3,17 +3,29 @@ Rails.application.routes.draw do
 
   get 'segrescates/destroy'
 
+  get "archivos/show" => 'archivos#show'
+  get "archivos/new" => 'archivos#new'
+  post 'archivos/create'
+  # root :to => 'archivos#new'
+  root :to => 'welcome#index'
+  resources :archivos, only: [:create]
+
  resources :rescates do
     resources :segrescates
   end
-  resources :seguimientos
+  
 
   devise_for :users
   resources :personas
 
-  resources :adopcions
+  resources :adopcions do
+    resources :seguimientos
+  end
+
+  get '/adopcions/registrar_seguimiento/:id' => 'adopcions#registrar_seguimiento', as: 'registrar_seguimiento' 
+  # get '/seguimientos/registrar_seguimiento' => 'seguimientos#registrar_seguimiento' 
   # get '/adopcions/new/:id' => 'adopcions#new'
- get "voluntarios/misrescates/:id" => "voluntarios#misrescates", :as => 'misrescates'
+  get "voluntarios/misrescates/:id" => "voluntarios#misrescates", :as => 'misrescates'
 
   get '/adopcions/new/:id' => 'adopcions#new', as: 'nuevo_adop'
   get '/seguimientos/new/:id' => 'seguimientos#new', as: 'nuevo_seguimiento'
@@ -46,7 +58,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'welcome#index'
+   # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
