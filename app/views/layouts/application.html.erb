@@ -2,8 +2,10 @@
 <html>
 <head>
   <title>Zooepagina</title>
-  <%= stylesheet_link_tag    '/application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag '/application'%>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application'%>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
       <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
@@ -11,7 +13,7 @@
       <script src="//code.jquery.com/jquery-1.10.2.js"></script>
       <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 </head>
-<!-- <body background="/assets/fondo.jpg"> -->
+<body background="/assets/fondo.jpg"> -->
 <body>
   <div class="navbar navbar-inverse navbar-fixed-top" style="background:#0C0C0C"role="navigation ">
     <div class="container">
